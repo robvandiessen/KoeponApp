@@ -33,3 +33,15 @@ body {
                                       /* offset horizontal: half of image width and text area width */
     }
 }
+
+#preloader {
+    width: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+}
+
+.content {
+    margin: 4px;
+    width: 100%;
+}

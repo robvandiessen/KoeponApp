@@ -40,44 +40,78 @@ $(function() {
 
 //hardware back button
 function onDeviceReady() {
-    // Register the event listener
     document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
+//hardware back button eventhandler
+function onBackKeyDown() {
+    //Phonon.Navigator().changePage(Phonon.Navigator().getPreviousPage());
 }
 
 //start the navigation
 var onDeviceReady = function () {
-	Phonon.Navigator().start('home');
+	Phonon.Navigator().start('uitleg1');
 };
 document.addEventListener('deviceready', onDeviceReady, false);
 
-//hardware back button eventhandler
-function onBackKeyDown() {
-    
-}
-
 //--Navigation--//
 Phonon.Navigator({
-    defaultPage: 'home',
+    defaultPage: 'uitleg1',
     templatePath: 'tpl',
     pageAnimations: true
 });
 
-//Home
-Phonon.Navigator().on({page: 'home', template: 'home', asynchronous: false}, function(activity) {
+//uitleg 1
+Phonon.Navigator().on({page: 'uitleg1', template: 'uitleg1', asynchronous: false}, function(activity) {
     //Here you can call functions on page load, quit etc
-    activity.onCreate(function(self, el, req) {
+    activity.onCreate(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {});
+    activity.onTransitionEnd(function() {});
+    activity.onQuit(function(self) {});
+    activity.onHidden(function(el) {});
+});
 
-    });
-    activity.onReady(function(self, el, req) {
+//uitleg 2
+Phonon.Navigator().on({page: 'uitleg2', template: 'uitleg2', asynchronous: false}, function(activity) {
+    activity.onCreate(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {});
+    activity.onTransitionEnd(function() {});
+    activity.onQuit(function(self) {});
+    activity.onHidden(function(el) {});
+});
 
-    });
-    activity.onTransitionEnd(function() {
+//Welkom
+Phonon.Navigator().on({page: 'welkom', template: 'welkom', asynchronous: false}, function(activity) {
+    activity.onCreate(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {});
+    activity.onTransitionEnd(function() {});
+    activity.onQuit(function(self) {});
+    activity.onHidden(function(el) {});
+});
 
-    });
-    activity.onQuit(function(self) {
+//Overzicht
+Phonon.Navigator().on({page: 'overzicht', template: 'overzicht', asynchronous: false}, function(activity) {
+    activity.onCreate(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {});
+    activity.onTransitionEnd(function() {});
+    activity.onQuit(function(self) {});
+    activity.onHidden(function(el) {});
+});
 
-    });
-    activity.onHidden(function(el) {
+//Detail
+Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false}, function(activity) {
+    activity.onCreate(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {});
+    activity.onTransitionEnd(function() {});
+    activity.onQuit(function(self) {});
+    activity.onHidden(function(el) {});
+});
 
-    });
+//Niet in de stad
+Phonon.Navigator().on({page: 'geenStad', template: 'geenStad', asynchronous: false}, function(activity) {
+    activity.onCreate(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {});
+    activity.onTransitionEnd(function() {});
+    activity.onQuit(function(self) {});
+    activity.onHidden(function(el) {});
 });
