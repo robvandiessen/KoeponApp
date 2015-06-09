@@ -55,6 +55,14 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/de.appplant.cordova.plugin.background-mode/www/background-mode.js",
+        "id": "de.appplant.cordova.plugin.background-mode.BackgroundMode",
+        "clobbers": [
+            "cordova.plugins.backgroundMode",
+            "plugin.backgroundMode"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-dialogs/www/notification.js",
         "id": "cordova-plugin-dialogs.notification",
         "merges": [
@@ -67,6 +75,13 @@ module.exports = [
         "merges": [
             "navigator.notification"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.device/www/device.js",
+        "id": "org.apache.cordova.device.device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -77,8 +92,10 @@ module.exports.metadata =
     "eu.mobilion.ibeacon": "0.0.0",
     "nl.x-services.plugins.toast": "2.0.4",
     "org.transistorsoft.cordova.background-geolocation": "0.3.6",
+    "de.appplant.cordova.plugin.background-mode": "0.6.4",
     "cordova-plugin-geolocation": "1.0.0",
-    "cordova-plugin-dialogs": "1.1.0"
+    "cordova-plugin-dialogs": "1.1.0",
+    "org.apache.cordova.device": "0.3.0"
 }
 // BOTTOM OF METADATA
 });

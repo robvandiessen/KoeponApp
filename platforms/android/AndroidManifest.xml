@@ -14,6 +14,7 @@
         <service android:name="com.radiusnetworks.ibeacon.service.IBeaconService" />
         <service android:name="com.radiusnetworks.ibeacon.IBeaconIntentProcessor" />
         <service android:enabled="true" android:name="com.tenforwardconsulting.cordova.bgloc.LocationUpdateService" android:process=":remote" />
+        <service android:name="de.appplant.cordova.plugin.background.ForegroundService" />
     </application>
     <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="22" />
     <uses-permission android:name="android.permission.VIBRATE" />
