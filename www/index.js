@@ -127,15 +127,6 @@ Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false},
     activity.onHidden(function(el) {});
 });
 
-//Niet in de stad
-Phonon.Navigator().on({page: 'geenStad', template: 'geenStad', asynchronous: false}, function(activity) {
-    activity.onCreate(function(self, el, req) {});
-    activity.onReady(function(self, el, req) {});
-    activity.onTransitionEnd(function() {});
-    activity.onQuit(function(self) {});
-    activity.onHidden(function(el) {});
-});
-
 
 //--Functions--//
 //vars
