@@ -69,9 +69,7 @@ Phonon.Navigator().on({page: 'uitleg1', template: 'uitleg1', asynchronous: false
     activity.onCreate(function(self, el, req) {
         inCity=false;
     });
-    activity.onReady(function(self, el, req) {
-        locationGPS();
-    });
+    activity.onReady(function(self, el, req) {});
     activity.onTransitionEnd(function() {});
     activity.onQuit(function(self) {});
     activity.onHidden(function(el) {});
@@ -89,7 +87,10 @@ Phonon.Navigator().on({page: 'uitleg2', template: 'uitleg2', asynchronous: false
 //Welkom
 Phonon.Navigator().on({page: 'welkom', template: 'welkom', asynchronous: false}, function(activity) {
     activity.onCreate(function(self, el, req) {});
-    activity.onReady(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {
+        inCity=false;
+        locationGPS();
+    });
     activity.onTransitionEnd(function() {});
     activity.onQuit(function(self) {});
     activity.onHidden(function(el) {});
@@ -98,7 +99,9 @@ Phonon.Navigator().on({page: 'welkom', template: 'welkom', asynchronous: false},
 //Overzicht
 Phonon.Navigator().on({page: 'overzicht', template: 'overzicht', asynchronous: false}, function(activity) {
     activity.onCreate(function(self, el, req) {});
-    activity.onReady(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {
+        locationGPS();
+    });
     activity.onTransitionEnd(function() {});
     activity.onQuit(function(self) {});
     activity.onHidden(function(el) {});
@@ -119,7 +122,9 @@ Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false},
 //Plattegrond
 Phonon.Navigator().on({page: 'plattegrond', template: 'plattegrond', asynchronous: false}, function(activity) {
     activity.onCreate(function(self, el, req) {});
-    activity.onReady(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {
+        document.getElementById('maps').src = "https://www.google.com/maps/embed/v1/search?key=AIzaSyCivTdNSJC1KC7fbPhaB3p08zdY5QHsAqU&center="+lat+","+lng+"&zoom=18&q=winkels+in+Gemert";
+    });
     activity.onTransitionEnd(function() {});
     activity.onQuit(function(self) {});
     activity.onHidden(function(el) {});
@@ -139,9 +144,9 @@ var koepons = [1,2,3,4,5,6,7,8,9,0];
 var koeponsAvailable = 0;
 var int = 0;
 var WeetjeSeen = [false,false,false,false,false];
+var shoppenUsed = [false,false,false,false,false];
 
-//update timer
-locationGPS();
+//update timers
 window.setInterval(function(){
     if(!inCity) {
         locationGPS();
@@ -187,8 +192,8 @@ function checkCity(lat, lng) {
         if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 6.000) {
             inCity=true;
             $('#koeponlijst').empty();
-            getKoepons();
             getWeetjes();
+            getKoepons();
         } else {
             if(inCity){ notInCity(1);} 
             else {notInCity(0);}
@@ -203,10 +208,10 @@ function getKoepons() {
     for (i = 0; i < 5; i++) {
         var lattemp = pendels.Pendels.Shoppen[i].lat;
         var lngtemp = pendels.Pendels.Shoppen[i].lng;
-        if(lat >= lattemp-0.0025 && lat <= lattemp+0.0025){
-            if(lng >= lngtemp-0.0025 && lng <= lngtemp+0.0025){
-                $('#koeponlijst').append('<li><a href="#!detail/Shoppen'+i.toString()+'">' +
-                    pendels.Pendels.Shoppen[i].titel + '</a></li>');
+        if (!shoppenUsed[i] && lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
+            if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+                $('#koeponlijst').append('<li><a href="#!detail/Shoppen' + i.toString() + '">' +
+                        pendels.Pendels.Shoppen[i].titel + '</a></li>');
             }
         }
     }
@@ -261,7 +266,7 @@ function notification(seen) {
             'We hebben een weetje voor je',                           // message
             weetjeOK,         // callback to invoke with index of button pressed
             'Gemert weetje',                                            // title
-            ['Ok','Nope']                                               // buttonLabels
+            ['Toon','Nope']                                      // buttonLabels
         );
     }
 }

@@ -2,6 +2,7 @@ function getDetails(val){
     var index = val.substr(val.length - 1);
     var cat = val.substring(0, val.length - 1);
     
+    var shop = [];
     
     var titel = document.getElementById('pendelTitel');
     var beschrijving = document.getElementById('beschrijving');
@@ -30,6 +31,7 @@ function getDetails(val){
         beschrijving.innerHTML = pendels.Pendels.Shoppen[index].beschrijving;
         $('#pendelImg').attr('src',pendels.Pendels.Shoppen[index].img);
         $('#pendelBar').attr('src',pendels.Pendels.Shoppen[index].barcode);
+        shoppenUsed[index] = true;
     }
     else if(cat ==='Weetjes'){
         //alert(pendels.Pendels.Shoppen[index].titel);
