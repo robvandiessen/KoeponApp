@@ -10,16 +10,10 @@ var app = {
         this.bindEvents();
     },
     // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
@@ -45,11 +39,10 @@ $(function() {
 
 // Enable & setup backgroundmode
 document.addEventListener('deviceready', function () {
-    //alert('bg enable');
     cordova.plugins.backgroundMode.enable();
     cordova.plugins.backgroundMode.setDefaults({
         title:  'Pendel',
-        text: 'Je hebt ' + koeponsAvailable + ' voordelen beschikbaar'
+        text: 'Je hebt geen voordelen beschikbaar'
     });
     
     //listen for android back btn
@@ -145,6 +138,7 @@ var allCategories;
 var koepons = [1,2,3,4,5,6,7,8,9,0];
 var koeponsAvailable = 0;
 var int = 0;
+var WeetjeSeen = [false,false,false,false,false];
 
 //update timer
 locationGPS();
@@ -161,6 +155,7 @@ window.setInterval(function(){
     }
     var temp = koeponsAvailable;
     koeponsAvailable = $("#koeponlijst li").length;
+    //prevent update when unnecessary
     if (temp !== koeponsAvailable) {
         cordova.plugins.backgroundMode.configure({
             text: 'Je hebt ' + koeponsAvailable + ' voordelen beschikbaar'
@@ -183,7 +178,7 @@ function locationGPS() {
             ['OK']                                               // buttonLabels
         );
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true });
 }
 
 //function to check if you are in the city
@@ -191,19 +186,25 @@ function checkCity(lat, lng) {
     if (lat.toFixed(3) >= 51.000&& lat.toFixed(3) <= 52.000) {
         if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 6.000) {
             inCity=true;
+            $('#koeponlijst').empty();
             getKoepons();
-        } else {notInCity();}
-    } else {notInCity();}
+            getWeetjes();
+        } else {
+            if(inCity){ notInCity(1);} 
+            else {notInCity(0);}
+        }
+    } else {
+        if(inCity){ notInCity(1);} 
+        else {notInCity(0);}
+    }
 }
 
 function getKoepons() {
-    int++;
-    $('#koeponlijst').empty();
     for (i = 0; i < 5; i++) {
         var lattemp = pendels.Pendels.Shoppen[i].lat;
         var lngtemp = pendels.Pendels.Shoppen[i].lng;
-        if(lat >= lattemp-0.0005 && lat <= lattemp+0.0005){
-            if(lng >= lngtemp-0.0005 && lng <= lngtemp+0.0005){
+        if(lat >= lattemp-0.0025 && lat <= lattemp+0.0025){
+            if(lng >= lngtemp-0.0025 && lng <= lngtemp+0.0025){
                 $('#koeponlijst').append('<li><a href="#!detail/Shoppen'+i.toString()+'">' +
                     pendels.Pendels.Shoppen[i].titel + '</a></li>');
             }
@@ -211,18 +212,64 @@ function getKoepons() {
     }
 }
 
-function notInCity() {
+function getWeetjes() {
+    for (i = 0; i < 5; i++) {
+        var lattemp = pendels.Pendels.Weetjes[i].lat;
+        var lngtemp = pendels.Pendels.Weetjes[i].lng;
+        if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
+            if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+                $('#koeponlijst').append('<li><a class="weetje" href="#!detail/Weetjes' + i.toString() + '">' +
+                        pendels.Pendels.Weetjes[i].titel + '</a></li>');
+                notification(WeetjeSeen[i]);
+                WeetjeSeen[i] = true;
+                //alert(WeetjeSeen + " " + i + "\n" + WeetjeSeen[i]);
+            }
+        }
+    }
+}
+
+function notInCity(val) {
     inCity=false;
-    navigator.notification.confirm(
-        'Je krijgt alleen voordelen aangeboden als je in de stad bent',// message
-        notifyOK,              // callback to invoke with index of button pressed
-        'Je bent niet in Gemert',                                        // title
-        ['OK']                                                    // buttonLabels
-    );
+    if(val===0) {
+        navigator.notification.confirm(
+            'Je krijgt alleen voordelen aangeboden als je in de stad bent',// message
+            notifyOK,              // callback to invoke with index of button pressed
+            'Je bent niet in Gemert',                                        // title
+            ['OK']                                                    // buttonLabels
+        );
+    }
+    if(val===1) {
+        navigator.notification.confirm(
+            'Tot de volgende keer!',                                  // message
+            notifyOK,         // callback to invoke with index of button pressed
+            'Leuk dat je er was',                                       // title
+            ['OK']                                               // buttonLabels
+        );
+    }
 }
 
 function notifyOK() {
-    Phonon.Navigator().changePage('page-name');
+    cordova.plugins.backgroundMode.disable();
+    Phonon.Navigator().changePage('welkom');
+}
+
+function notification(seen) {
+    if (!seen) {
+        navigator.vibrate([200, 100, 200]);
+        navigator.notification.beep(1);
+        navigator.notification.confirm(
+            'We hebben een weetje voor je',                           // message
+            weetjeOK,         // callback to invoke with index of button pressed
+            'Gemert weetje',                                            // title
+            ['Ok','Nope']                                               // buttonLabels
+        );
+    }
+}
+
+function weetjeOK(buttonIndex) {
+    if(buttonIndex === 1){
+        Phonon.Navigator().changePage('detail', 'Weetjes');
+    }
 }
 
 function showGPS() {
