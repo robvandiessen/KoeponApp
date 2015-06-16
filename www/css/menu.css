@@ -1,0 +1,153 @@
+.hideToggle
+{
+  display:none;
+}
+
+#sideMenu
+{
+  background-color: none;
+  width: 100%;
+  box-shadow: none;
+  /*background-color: rgba(0,0,0,0.0);*/
+}
+
+div#contentarea {
+  position: relative;
+  width: 100%;
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -moz-transition: -moz-transform 0.5s;
+  /* transition settings */
+  
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+input[type="checkbox"]#togglebox {
+  /* checkbox used to toggle menu state */
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+#navToggler
+{
+  position: relative;
+  top: 12px;
+  left: 5px;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+#navToggler2
+{
+  position: relative;
+  top: 12px;
+  left: 5px;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+
+nav#offcanvas-menu {
+  /* Full screen nav menu */
+  width: 85%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  visibility: hidden; /* this is for browsers that don't support CSS3 translate3d */
+  -moz-transform: translate3d(-85%, 0, 0);
+  -webkit-transform: translate3d(-85%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #ffffff;
+  display: block;
+  position: fixed;
+  text-align: center;
+  overflow: auto;
+  -moz-transition: -moz-transform 0.6s, visibility 0s 0.6s;
+  /* transition settings */
+  -webkit-transition: -webkit-transform 0.6s, visibility 0s 0.6s;
+  transition: transform 0.6s, visibility 0s 0.6s;
+}
+
+input[type="checkbox"]#togglebox:checked ~ div#contentarea {
+  margin-left: 10px;
+  -moz-transform: translate3d(85%, 0, 0);
+  -webkit-transform: translate3d(85%, 0, 0);
+  transform: translate3d(85%, 0, 0);
+}
+
+input[type="checkbox"]#togglebox:checked ~ nav#offcanvas-menu {
+  /* nav state when corresponding checkbox is checked */
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  visibility: visible; /* this is for browsers that don't support CSS3 translate3d in showing the menu */
+  -moz-transition-delay: 0s; /* No delay for applying "visibility:visible" property when menu is going from "closed" to "open" */
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+/* STYLES SIDEMENU CONTENT */
+.pendel-sidemenu-profileImg
+{
+    width: 100%;
+}
+
+.profile_title
+{
+  text-align: left;
+  margin: -50px 0px 0px 20px;
+  padding: 0px 0px 20px 0px;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+.collection
+{
+  border:none;
+}
+
+#overlay_sidemenu
+{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.overlaySideMenu
+{
+  background-color: rgba(0,0,0,0.5);
+}
+
+.sidemenuNav
+{
+  padding: 20px 0px 0px 0px;
+  background-color: white;
+}
+
+#sidemenu_item
+{
+  color: #212121;
+  padding: 15px 0px 20px 17px;
+  margin: 0px;
+  border: none;
+  list-style-type: none;
+}
+
+
+#sidemenu_item_icon
+{
+  padding: 0px 20px 0px 0px;
+  top: 6px;
+  position: relative;
+}
+
+
+

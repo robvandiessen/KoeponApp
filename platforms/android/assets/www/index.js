@@ -48,7 +48,7 @@ document.addEventListener('deviceready', function () {
     //listen for android back btn
     document.addEventListener("backbutton", onBackClickEvent, false);
     //start the navigation
-    Phonon.Navigator().start('overzicht');
+    Phonon.Navigator().start('uitleg1');
 }, false);
 
 //hardware back button eventhandler
@@ -58,7 +58,7 @@ function onBackClickEvent() {
 
 //--Navigation--//
 Phonon.Navigator({
-    defaultPage: 'overzicht',
+    defaultPage: 'uitleg1',
     templatePath: 'tpl',
     pageAnimations: true
 });

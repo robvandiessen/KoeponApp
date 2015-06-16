@@ -1,14 +1,27 @@
-<header class="header-bar nav-wrapper">
+<header class="header-bar nav-wrapper" id="sideMenu">
     <a class="title brand-logo">Overzicht</a>
+    <input type="checkbox" id="togglebox" />
+    <nav id="offcanvas-menu">
+        <img class="pendel-sidemenu-profileImg" src="img/PENDEL_sidemenu-profile.jpg" />
+        <h5 class="profile_title"> Beppy van den Broek </h5>
+        <div class="collection left-align">
+            <ul class="sidemenuNav">
+                <a href="#!" class="collection-item" id="sidemenu_item"><i class="small mdi-maps-map" id="sidemenu_item_icon"></i>Plattegrond</a>
+                <a href="#!" class="collection-item" id="sidemenu_item"><i class="small mdi-action-settings" id="sidemenu_item_icon"></i>Instellingen</a>
+            </ul>
+        </div>
+    </nav>
+    <div id="contentarea">
+        <label class="large mdi-navigation-menu" for="togglebox" id="navToggler" onclick="showMenu();"></label>
+        <label class="large mdi-navigation-menu hideToggle" for="togglebox" id="navToggler2" onclick="hideMenu();"></label>
+    </div>
 </header>
+<div id="overlay_sidemenu"></div>
 <div class="content">
     <h3>PendelApp Overzicht</h3>
     <button class="btn waves-effect waves-light" id="test1" onclick="Phonon.Navigator().changePage('detail')">Test</button>
     <button class="btn waves-effect waves-light" id="test1" onclick="showGPS()">GPS</button>
     <div>
-        <ul id="koeponlijst" class="list">
-            <li><button data-navigation="detail" onclick="getDetails('Shoppen',1)">
-                    Test1</button></li>
-        </ul>
+        <ul id="koeponlijst" class="list"></ul>
     </div>
 </div>
