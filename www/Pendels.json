@@ -119,8 +119,8 @@
             "lng":5.4820176,
             "titel":"Shoppen 1",
             "beschrijving":"Helloh",
-            "img":"images/shoppen1.png",
-            "barcode":"barcode/shoppen1.png"
+            "img":"/images/Shoppen1.jpg",
+            "barcode":"/barcode/Shoppen1.jpg"
         },{
             "lat":51.4515956,
             "lng":5.4836137,
@@ -136,52 +136,19 @@
             "img":"/images/Shoppen3.jpg",
             "barcode":"/barcode/Shoppen3.jpg"
         },{
-            "lat":51.4442854,
-            "lng":5.47905478,
+            "lat":51.4513952,
+            "lng":5.4824137,
             "titel":"Shoppen 4",
             "beschrijving":"Helloh",
             "img":"/images/Shoppen4.jpg",
             "barcode":"/barcode/Shoppen4.jpg"
         },{
-            "lat":51.4442349,
-            "lng":5.4792198,
+            "lat":51.4518952,
+            "lng":5.4828137,
             "titel":"Shoppen 5",
             "beschrijving":"Helloh",
-            "img":"/images/shoppen5.png",
-            "barcode":"/barcode/shoppen5.png"
-        }
-    ],
-    "Weetjes" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Weetje 1",
-            "beschrijving":"Helloh",
-            "img":"images/Weetje1.png"
-        },{
-            "lat":51.4215956,
-            "lng":5.4836137,
-            "titel":"Weetje 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje2.jpg"
-        },{
-            "lat":51.4210952,
-            "lng":5.4820137,
-            "titel":"Weetje 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje3.jpg"
-        },{
-            "lat":51.4442854,
-            "lng":5.47905478,
-            "titel":"Weetje 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje4.jpg"
-        },{
-            "lat":51.4442349,
-            "lng":5.4792198,
-            "titel":"Weetje 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje5.png"
+            "img":"/images/Shoppen5.jpg",
+            "barcode":"/barcode/Shoppen5.jpg"
         }
     ]
     

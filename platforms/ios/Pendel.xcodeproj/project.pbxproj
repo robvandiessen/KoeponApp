@@ -39,22 +39,11 @@
 		7E7966E61810823500FA85AD /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DC1810823500FA85AD /* icon-small.png */; };
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
-		4B5497B5BA3B4912B95E1519 /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC463092F34214B139CD50 /* CDVVibration.m */; };
-		6273B310D4554C8E816155C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF350D11FE8B4A69B8C09963 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F14747517879455BB6365D74 /* IBeaconPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 288FA72072D14F388B17AE52 /* IBeaconPlugin.m */; };
-		24837AF9554B4F69BF0EF94C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0737D463354D99B9926673 /* CoreBluetooth.framework */; };
-		9B404279D3734C56BCB4884B /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3905F8A5D5D247238C7DED16 /* Toast+UIView.m */; };
-		AFBEB8601BB24E33B397C075 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0D84F9845949F8BC1580C4 /* Toast.m */; };
-		D2E34AD3EFB045BBB1A0F356 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D615EF8B7D74F09B44FB4FF /* QuartzCore.framework */; };
-		E4538F6213A14403BCC6CBE8 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 898185B93832492B8B904C86 /* CDVLocation.m */; };
-		5585ADE2ECB147EA84BE7A45 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54578D15E08240F885492A27 /* CoreLocation.framework */; };
-		20A75E27870A462D82469A40 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 9130D66F402A456D946FE8DB /* CDVNotification.m */; };
-		9148EA09C08D459898110596 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CEF49B30B739412EA847B396 /* CDVNotification.bundle */; };
-		6E437BB6D8F240C995A6AFC9 /* CDVBackgroundGeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B843C3586E2491C97A4E949 /* CDVBackgroundGeoLocation.m */; };
-		8132C0AA4BE64BB1ACF164A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138D42E977A4DFCB44296C1 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		9B98FBBF72DB4E2DB1755E85 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = F97EAB7FD0E9475989C416A6 /* CDVDevice.m */; };
-		964D6495329E468CB8C2ED12 /* APPBackgroundMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC56E22EEB4EAABC9B46A7 /* APPBackgroundMode.m */; };
-		0CA802E9B1154B5CA49AD0D1 /* appbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 83F6F0FBBBBE401B8FD6F0E4 /* appbeep.wav */; };
+		6C66C3DB2BCE4892996312AB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635581D9F17443D082E7F3B9 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4E21676B7CCE4E18956CB27C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC118B04FF854B0B823A57AD /* CoreBluetooth.framework */; };
+		4E94F7AC826A4F8DACAF8345 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04FC5CB680A4FE880C82031 /* QuartzCore.framework */; };
+		4AD2D8ACC62942F5BC53D408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7D4B95954B40A3845D1A4A /* CoreLocation.framework */; };
+		2D6F486221B74CECA927C3C9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989B5AD57E4347F88948F27F /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,31 +109,11 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Pendel/config.xml"; sourceTree = "<group>"; };
-		3CFC463092F34214B139CD50 /* CDVVibration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVVibration.m"; path = "org.apache.cordova.vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		9490E30FF608435AAD0C6E55 /* CDVVibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVVibration.h"; path = "org.apache.cordova.vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		BF350D11FE8B4A69B8C09963 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		288FA72072D14F388B17AE52 /* IBeaconPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "IBeaconPlugin.m"; path = "eu.mobilion.ibeacon/IBeaconPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		2675BF7C1A9A48EE8DB1E0C4 /* IBeaconPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IBeaconPlugin.h"; path = "eu.mobilion.ibeacon/IBeaconPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		2A0737D463354D99B9926673 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		3905F8A5D5D247238C7DED16 /* Toast+UIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Toast+UIView.m"; path = "nl.x-services.plugins.toast/Toast+UIView.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		EE0D84F9845949F8BC1580C4 /* Toast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Toast.m"; path = "nl.x-services.plugins.toast/Toast.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		0A489AB3B08941F8B6FEEB4E /* Toast+UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Toast+UIView.h"; path = "nl.x-services.plugins.toast/Toast+UIView.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		7C520979E0B1471892BB8860 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Toast.h"; path = "nl.x-services.plugins.toast/Toast.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		6D615EF8B7D74F09B44FB4FF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		898185B93832492B8B904C86 /* CDVLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		C0FAC747373547F18FB788B3 /* CDVLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		54578D15E08240F885492A27 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		9130D66F402A456D946FE8DB /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		F595226F68F649DBA5EF7A3C /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		CEF49B30B739412EA847B396 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "Resources\CDVNotification.bundle"; sourceTree = "<group>"; };
-		4B843C3586E2491C97A4E949 /* CDVBackgroundGeoLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVBackgroundGeoLocation.m"; path = "org.transistorsoft.cordova.background-geolocation/CDVBackgroundGeoLocation.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		CD1C81F022DA488CA786DF55 /* CDVBackgroundGeoLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVBackgroundGeoLocation.h"; path = "org.transistorsoft.cordova.background-geolocation/CDVBackgroundGeoLocation.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		2138D42E977A4DFCB44296C1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		F97EAB7FD0E9475989C416A6 /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		6F924106D6D549C0A6DCABD4 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		3ACC56E22EEB4EAABC9B46A7 /* APPBackgroundMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "APPBackgroundMode.m"; path = "de.appplant.cordova.plugin.background-mode/APPBackgroundMode.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		E910E8E776F342FA958C2FDE /* APPBackgroundMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "APPBackgroundMode.h"; path = "de.appplant.cordova.plugin.background-mode/APPBackgroundMode.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		83F6F0FBBBBE401B8FD6F0E4 /* appbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "appbeep.wav"; path = "Resources\appbeep.wav"; sourceTree = "<group>"; fileEncoding = 4; };
+		635581D9F17443D082E7F3B9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		FC118B04FF854B0B823A57AD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		C04FC5CB680A4FE880C82031 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		CE7D4B95954B40A3845D1A4A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		989B5AD57E4347F88948F27F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,11 +125,11 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
-				6273B310D4554C8E816155C8 /* AudioToolbox.framework in Frameworks */,
-				24837AF9554B4F69BF0EF94C /* CoreBluetooth.framework in Frameworks */,
-				D2E34AD3EFB045BBB1A0F356 /* QuartzCore.framework in Frameworks */,
-				5585ADE2ECB147EA84BE7A45 /* CoreLocation.framework in Frameworks */,
-				8132C0AA4BE64BB1ACF164A1 /* AVFoundation.framework in Frameworks */,
+				6C66C3DB2BCE4892996312AB /* AudioToolbox.framework in Frameworks */,
+				4E21676B7CCE4E18956CB27C /* CoreBluetooth.framework in Frameworks */,
+				4E94F7AC826A4F8DACAF8345 /* QuartzCore.framework in Frameworks */,
+				4AD2D8ACC62942F5BC53D408 /* CoreLocation.framework in Frameworks */,
+				2D6F486221B74CECA927C3C9 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,8 +191,6 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* Pendel-Info.plist */,
-				CEF49B30B739412EA847B396 /* CDVNotification.bundle */,
-				83F6F0FBBBBE401B8FD6F0E4 /* appbeep.wav */,
 			);
 			name = Resources;
 			path = "Pendel/Resources";
@@ -235,11 +202,11 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
-				BF350D11FE8B4A69B8C09963 /* AudioToolbox.framework */,
-				2A0737D463354D99B9926673 /* CoreBluetooth.framework */,
-				6D615EF8B7D74F09B44FB4FF /* QuartzCore.framework */,
-				54578D15E08240F885492A27 /* CoreLocation.framework */,
-				2138D42E977A4DFCB44296C1 /* AVFoundation.framework */,
+				635581D9F17443D082E7F3B9 /* AudioToolbox.framework */,
+				FC118B04FF854B0B823A57AD /* CoreBluetooth.framework */,
+				C04FC5CB680A4FE880C82031 /* QuartzCore.framework */,
+				CE7D4B95954B40A3845D1A4A /* CoreLocation.framework */,
+				989B5AD57E4347F88948F27F /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,24 +222,6 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				3CFC463092F34214B139CD50 /* CDVVibration.m */,
-				9490E30FF608435AAD0C6E55 /* CDVVibration.h */,
-				288FA72072D14F388B17AE52 /* IBeaconPlugin.m */,
-				2675BF7C1A9A48EE8DB1E0C4 /* IBeaconPlugin.h */,
-				3905F8A5D5D247238C7DED16 /* Toast+UIView.m */,
-				EE0D84F9845949F8BC1580C4 /* Toast.m */,
-				0A489AB3B08941F8B6FEEB4E /* Toast+UIView.h */,
-				7C520979E0B1471892BB8860 /* Toast.h */,
-				898185B93832492B8B904C86 /* CDVLocation.m */,
-				C0FAC747373547F18FB788B3 /* CDVLocation.h */,
-				9130D66F402A456D946FE8DB /* CDVNotification.m */,
-				F595226F68F649DBA5EF7A3C /* CDVNotification.h */,
-				4B843C3586E2491C97A4E949 /* CDVBackgroundGeoLocation.m */,
-				CD1C81F022DA488CA786DF55 /* CDVBackgroundGeoLocation.h */,
-				F97EAB7FD0E9475989C416A6 /* CDVDevice.m */,
-				6F924106D6D549C0A6DCABD4 /* CDVDevice.h */,
-				3ACC56E22EEB4EAABC9B46A7 /* APPBackgroundMode.m */,
-				E910E8E776F342FA958C2FDE /* APPBackgroundMode.h */,
 			);
 			name = Plugins;
 			path = "Pendel/Plugins";
@@ -426,8 +375,6 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
-				9148EA09C08D459898110596 /* CDVNotification.bundle in Resources */,
-				0CA802E9B1154B5CA49AD0D1 /* appbeep.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,15 +406,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				4B5497B5BA3B4912B95E1519 /* CDVVibration.m in Sources */,
-				F14747517879455BB6365D74 /* IBeaconPlugin.m in Sources */,
-				9B404279D3734C56BCB4884B /* Toast+UIView.m in Sources */,
-				AFBEB8601BB24E33B397C075 /* Toast.m in Sources */,
-				E4538F6213A14403BCC6CBE8 /* CDVLocation.m in Sources */,
-				20A75E27870A462D82469A40 /* CDVNotification.m in Sources */,
-				6E437BB6D8F240C995A6AFC9 /* CDVBackgroundGeoLocation.m in Sources */,
-				9B98FBBF72DB4E2DB1755E85 /* CDVDevice.m in Sources */,
-				964D6495329E468CB8C2ED12 /* APPBackgroundMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
