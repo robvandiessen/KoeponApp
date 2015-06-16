@@ -1,7 +1,6 @@
 var pendels;
 $.getJSON('Pendels.json').done(function(json){
     pendels = json;
-    //alert(pendels.Pendels.Horeca[0].img);
 });
 
 //--App var--//
@@ -52,28 +51,21 @@ document.addEventListener('deviceready', function () {
         title:  'Pendel',
         text: 'Pen, Pendel, Pendulum '
     });
+    //listen for android back btn
+    document.addEventListener("backbutton", onBackClickEvent, false);
+    //start the navigation
+    Phonon.Navigator().start('plattegrond');
 }, false);
 
-//hardware back button
-function onDeviceReady() {
-    document.addEventListener("backbutton", onBackKeyDown, false);
-}
 
 //hardware back button eventhandler
-function onBackKeyDown() {
-    alert('back');
-    //Phonon.Navigator().changePage(Phonon.Navigator().getPreviousPage());
+function onBackClickEvent() {
+    Phonon.Navigator().changePage(Phonon.Navigator().getPreviousPage());
 }
-
-//start the navigation
-var onDeviceReady = function () {
-	Phonon.Navigator().start('overzicht');
-};
-document.addEventListener('deviceready', onDeviceReady, false);
 
 //--Navigation--//
 Phonon.Navigator({
-    defaultPage: 'overzicht',
+    defaultPage: 'plattegrond',
     templatePath: 'tpl',
     pageAnimations: true
 });
@@ -83,9 +75,10 @@ Phonon.Navigator().on({page: 'uitleg1', template: 'uitleg1', asynchronous: false
     //Here you can call functions on page load, quit etc
     activity.onCreate(function(self, el, req) {
         inCity=false;
+    });
+    activity.onReady(function(self, el, req) {
         locationGPS();
     });
-    activity.onReady(function(self, el, req) {});
     activity.onTransitionEnd(function() {});
     activity.onQuit(function(self) {});
     activity.onHidden(function(el) {});
@@ -121,6 +114,18 @@ Phonon.Navigator().on({page: 'overzicht', template: 'overzicht', asynchronous: f
 //Detail
 Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false}, function(activity) {
     activity.onCreate(function(self, el, req) {});
+    activity.onReady(function(self, el, req) {
+        var paramVal = req.myParam;
+        getDetails(paramVal);
+    });
+    activity.onTransitionEnd(function() {});
+    activity.onQuit(function(self) {});
+    activity.onHidden(function(el) {});
+},'detail/:myParam');
+
+//Plattegrond
+Phonon.Navigator().on({page: 'plattegrond', template: 'plattegrond', asynchronous: false}, function(activity) {
+    activity.onCreate(function(self, el, req) {});
     activity.onReady(function(self, el, req) {});
     activity.onTransitionEnd(function() {});
     activity.onQuit(function(self) {});
@@ -151,10 +156,9 @@ window.setInterval(function(){
 window.setInterval(function(){
     if(inCity){
         locationGPS();
-        getKoepons();
         window.plugins.toast.showShortBottom('Update');
     }
-}, 5000);
+}, 15000);
 
 function locationGPS() {
     var onSuccess = function(position) {
@@ -179,6 +183,7 @@ function checkCity(lat, lng) {
     if (lat.toFixed(3) >= 51.450 && lat.toFixed(3) <= 51.454) {
         if (lng.toFixed(3) >= 5.480 && lng.toFixed(3) <= 5.486) {
             inCity=true;
+            getKoepons();
         } else {notInCity();}
     } else {notInCity();}
 }
@@ -191,8 +196,8 @@ function getKoepons() {
         var lngtemp = pendels.Pendels.Shoppen[i].lng;
         if(lat >= lattemp-0.0005 && lat <= lattemp+0.0005){
             if(lng >= lngtemp-0.0005 && lng <= lngtemp+0.0005){
-                $('#koeponlijst').append('<a href="#!page-name"><li>' +
-                    pendels.Pendels.Shoppen[i].titel + '</li></a>');
+                $('#koeponlijst').append('<li><a href="#!detail/Shoppen'+i.toString()+'">' +
+                    pendels.Pendels.Shoppen[i].titel + '</a></li>');
             }
         }
     }
@@ -201,15 +206,15 @@ function getKoepons() {
 function notInCity() {
     inCity=false;
     navigator.notification.confirm(
-        'Ju bent nied in Geemurt',                                    // message
-        notifyOK,             // callback to invoke with index of button pressed
-        'Pipoo',                                                        // title
-        ['OK']                                                   // buttonLabels
+        'Je krijgt alleen voordelen aangeboden als je in de stad bent',// message
+        notifyOK,              // callback to invoke with index of button pressed
+        'Je bent niet in Gemert',                                        // title
+        ['OK']                                                    // buttonLabels
     );
 }
 
 function notifyOK() {
-    
+    Phonon.Navigator().changePage('page-name');
 }
 
 function showGPS() {
