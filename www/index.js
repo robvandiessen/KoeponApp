@@ -49,14 +49,14 @@ document.addEventListener('deviceready', function () {
     cordova.plugins.backgroundMode.enable();
     cordova.plugins.backgroundMode.setDefaults({
         title:  'Pendel',
-        text: 'Pen, Pendel, Pendulum '
+        text: 'Je hebt ' + koeponsAvailable + ' voordelen beschikbaar'
     });
+    
     //listen for android back btn
     document.addEventListener("backbutton", onBackClickEvent, false);
     //start the navigation
-    Phonon.Navigator().start('plattegrond');
+    Phonon.Navigator().start('overzicht');
 }, false);
-
 
 //hardware back button eventhandler
 function onBackClickEvent() {
@@ -65,7 +65,7 @@ function onBackClickEvent() {
 
 //--Navigation--//
 Phonon.Navigator({
-    defaultPage: 'plattegrond',
+    defaultPage: 'overzicht',
     templatePath: 'tpl',
     pageAnimations: true
 });
@@ -143,6 +143,7 @@ var category='Shoppen';
 var allCategories;
 
 var koepons = [1,2,3,4,5,6,7,8,9,0];
+var koeponsAvailable = 0;
 var int = 0;
 
 //update timer
@@ -158,7 +159,15 @@ window.setInterval(function(){
         locationGPS();
         window.plugins.toast.showShortBottom('Update');
     }
-}, 15000);
+    var temp = koeponsAvailable;
+    koeponsAvailable = $("#koeponlijst li").length;
+    //prevent update when unnecessary
+    if (temp !== koeponsAvailable) {
+        cordova.plugins.backgroundMode.configure({
+            text: 'Je hebt ' + koeponsAvailable + ' voordelen beschikbaar'
+        });
+    }
+}, 7500);
 
 function locationGPS() {
     var onSuccess = function(position) {
@@ -180,8 +189,8 @@ function locationGPS() {
 
 //function to check if you are in the city
 function checkCity(lat, lng) {
-    if (lat.toFixed(3) >= 51.450 && lat.toFixed(3) <= 51.454) {
-        if (lng.toFixed(3) >= 5.480 && lng.toFixed(3) <= 5.486) {
+    if (lat.toFixed(3) >= 51.000&& lat.toFixed(3) <= 52.000) {
+        if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 6.000) {
             inCity=true;
             getKoepons();
         } else {notInCity();}

@@ -49,32 +49,23 @@ document.addEventListener('deviceready', function () {
     cordova.plugins.backgroundMode.enable();
     cordova.plugins.backgroundMode.setDefaults({
         title:  'Pendel',
-        text: 'Pen, Pendel, Pendulum '
+        text: 'Je hebt ' + koeponsAvailable + ' voordelen beschikbaar'
     });
-    document.addEventListener("backbutton", onBackClickEvent, false);
-    Phonon.Navigator().start('plattegrond');
-}, false);
-
-//hardware back button
-function onDeviceReady() {
     
-}
+    //listen for android back btn
+    document.addEventListener("backbutton", onBackClickEvent, false);
+    //start the navigation
+    Phonon.Navigator().start('overzicht');
+}, false);
 
 //hardware back button eventhandler
 function onBackClickEvent() {
-    alert('back');
-    //Phonon.Navigator().changePage(Phonon.Navigator().getPreviousPage());
+    Phonon.Navigator().changePage(Phonon.Navigator().getPreviousPage());
 }
-
-//start the navigation
-var onDeviceReady = function () {
-	
-};
-document.addEventListener('deviceready', onDeviceReady, false);
 
 //--Navigation--//
 Phonon.Navigator({
-    defaultPage: 'plattegrond',
+    defaultPage: 'overzicht',
     templatePath: 'tpl',
     pageAnimations: true
 });
@@ -152,6 +143,7 @@ var category='Shoppen';
 var allCategories;
 
 var koepons = [1,2,3,4,5,6,7,8,9,0];
+var koeponsAvailable = 0;
 var int = 0;
 
 //update timer
@@ -167,7 +159,14 @@ window.setInterval(function(){
         locationGPS();
         window.plugins.toast.showShortBottom('Update');
     }
-}, 15000);
+    var temp = koeponsAvailable;
+    koeponsAvailable = $("#koeponlijst li").length;
+    if (temp !== koeponsAvailable) {
+        cordova.plugins.backgroundMode.configure({
+            text: 'Je hebt ' + koeponsAvailable + ' voordelen beschikbaar'
+        });
+    }
+}, 7500);
 
 function locationGPS() {
     var onSuccess = function(position) {
@@ -189,8 +188,8 @@ function locationGPS() {
 
 //function to check if you are in the city
 function checkCity(lat, lng) {
-    if (lat.toFixed(3) >= 51.450 && lat.toFixed(3) <= 51.454) {
-        if (lng.toFixed(3) >= 5.480 && lng.toFixed(3) <= 5.486) {
+    if (lat.toFixed(3) >= 51.000&& lat.toFixed(3) <= 52.000) {
+        if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 6.000) {
             inCity=true;
             getKoepons();
         } else {notInCity();}
@@ -215,15 +214,15 @@ function getKoepons() {
 function notInCity() {
     inCity=false;
     navigator.notification.confirm(
-        'Ju bent nied in Geemurt',                                    // message
-        notifyOK,             // callback to invoke with index of button pressed
-        'Pipoo',                                                        // title
-        ['OK']                                                   // buttonLabels
+        'Je krijgt alleen voordelen aangeboden als je in de stad bent',// message
+        notifyOK,              // callback to invoke with index of button pressed
+        'Je bent niet in Gemert',                                        // title
+        ['OK']                                                    // buttonLabels
     );
 }
 
 function notifyOK() {
-    
+    Phonon.Navigator().changePage('page-name');
 }
 
 function showGPS() {
