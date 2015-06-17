@@ -14,15 +14,7 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
     text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
 }
 
 /* Landscape layout (with min-width) */
@@ -130,4 +122,122 @@ body {
     position: relative;
     margin-top: -10px;
     left: -5px;
+}
+
+/*-------------------------overzicht-------------------------------*/
+#banner_overzicht{
+    width: 100%;
+    margin-top: -48px;
+    box-shadow: 0px -20px 20px 20px rgba(0, 0, 0, 0.75);
+}
+
+#banner_overzicht img{
+    width: 100%;
+}
+
+#content_overzicht{
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.kop_overzicht{
+    left: 72px;
+    top: 200px;
+    position: absolute;
+}
+
+.a_overzicht{
+    width: 100% !important;
+    margin: 10px  0;
+    display: block;
+    height: auto;
+    overflow: auto;
+}
+
+.listimg_overzicht{
+    margin: auto 16px;
+    width: 40px;
+    float: left;
+    border-radius: 20px;
+}
+
+.text_overzicht{
+    float: left;
+}
+
+p.subscr_overzicht{
+    width: 70%;
+    margin: 0;
+}
+
+p.cat_overzicht{
+    float: left;
+    margin: 0;
+}
+
+p.adress_overzicht{
+    float: left;
+    margin: 0;
+}
+
+.filter_btn{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.icon_filter{
+    color: #757575 !important;
+}
+
+#nobar {
+    margin-top: 0;
+}
+
+/*-------------------detail ----------------------------*/
+#logo_detail{
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    position: absolute;
+    bottom: -40px;
+    left: 16px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 0px grey;
+}
+
+#content_detail{
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.icon_detail{
+    margin-top: 10px;
+    width: auto;
+}
+
+.kop_detail{
+    left: 72px;
+    top: 150px;
+    position: absolute;
+}
+
+.location_detail{
+    width: 100% !important;
+    margin: 10px  0;
+    display: block;
+    height: auto;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+.subscr_detail{
+    margin: 0 0 10px 16px;
+    font-weight: 200;
+}
+
+#icon_scan{
+    width: 25px;
+    margin: 15px auto;
 }

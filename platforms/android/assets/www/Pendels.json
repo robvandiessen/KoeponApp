@@ -1,189 +1,208 @@
-{ "Pendels": {
-    "Horeca" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Horeca 1",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca1.jpg",
-            "barcode":"/barcode/Horeca1.jpg"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Horeca 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca2.jpg",
-            "barcode":"/barcode/Horeca2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Horeca 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca3.jpg",
-            "barcode":"/barcode/Horeca3.jpg"
-        },{
-            "lat":51.4513952,
-            "lng":5.4824137,
-            "titel":"Horeca 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca4.jpg",
-            "barcode":"/barcode/Horeca4.jpg"
-        },{
-            "lat":51.4518952,
-            "lng":5.4828137,
-            "titel":"Horeca 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca5.jpg",
-            "barcode":"/barcode/Horeca5.jpg"
-        }
-    ],
-    "Cultuur" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Cultuur 1",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur1.jpg",
-            "barcode":"/barcode/Cultuur1.jpg"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Cultuur 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur2.jpg",
-            "barcode":"/barcode/Cultuur2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Cultuur 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur3.jpg",
-            "barcode":"/barcode/Cultuur3.jpg"
-        },{
-            "lat":51.4513952,
-            "lng":5.4824137,
-            "titel":"Cultuur 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur4.jpg",
-            "barcode":"/barcode/Cultuur4.jpg"
-        },{
-            "lat":51.4518952,
-            "lng":5.4828137,
-            "titel":"Cultuur 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur5.jpg",
-            "barcode":"/barcode/Cultuur5.jpg"
-        }
-    ],
-    "Entertainment" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Entertainment 1",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment1.jpg",
-            "barcode":"/barcode/Entertainment1.jpg"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Entertainment 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment2.jpg",
-            "barcode":"/barcode/Entertainment2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Entertainment 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment3.jpg",
-            "barcode":"/barcode/Entertainment3.jpg"
-        },{
-            "lat":51.4513952,
-            "lng":5.4824137,
-            "titel":"Entertainment 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment4.jpg",
-            "barcode":"/barcode/Entertainment4.jpg"
-        },{
-            "lat":51.4518952,
-            "lng":5.4828137,
-            "titel":"Entertainment 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment5.jpg",
-            "barcode":"/barcode/Entertainment5.jpg"
-        }
-    ],
-    "Shoppen" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Shoppen 1",
-            "beschrijving":"Helloh",
-            "img":"images/shoppen1.png",
-            "barcode":"barcode/shoppen1.png"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Shoppen 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen2.jpg",
-            "barcode":"/barcode/Shoppen2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Shoppen 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen3.jpg",
-            "barcode":"/barcode/Shoppen3.jpg"
-        },{
-            "lat":51.4442854,
-            "lng":5.47905478,
-            "titel":"Shoppen 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen4.jpg",
-            "barcode":"/barcode/Shoppen4.jpg"
-        },{
-            "lat":51.4442349,
-            "lng":5.4792198,
-            "titel":"Shoppen 5",
-            "beschrijving":"Helloh",
-            "img":"/images/shoppen5.png",
-            "barcode":"/barcode/shoppen5.png"
-        }
-    ],
-    "Weetjes" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Weetje 1",
-            "beschrijving":"Helloh",
-            "img":"images/Weetje1.png"
-        },{
-            "lat":51.4215956,
-            "lng":5.4836137,
-            "titel":"Weetje 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje2.jpg"
-        },{
-            "lat":51.4210952,
-            "lng":5.4820137,
-            "titel":"Weetje 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje3.jpg"
-        },{
-            "lat":51.4442854,
-            "lng":5.47905478,
-            "titel":"Weetje 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje4.jpg"
-        },{
-            "lat":51.4442349,
-            "lng":5.4792198,
-            "titel":"Weetje 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Weetje5.png"
-        }
-    ]
-    
+{
+    "Pendels": {
+        "Horeca": [
+            {
+                "lat": 51.4517747,
+                "lng": 5.4820176,
+                "titel": "Horeca 1",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Horeca1.jpg",
+                "barcode": "barcode/Horeca1.jpg"
+            }, {
+                "lat": 51.4515956,
+                "lng": 5.4836137,
+                "titel": "Horeca 2",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Horeca2.jpg",
+                "barcode": "barcode/Horeca2.jpg"
+            }, {
+                "lat": 51.4510952,
+                "lng": 5.4820137,
+                "titel": "Horeca 3",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Horeca3.jpg",
+                "barcode": "barcode/Horeca3.jpg"
+            }, {
+                "lat": 51.4513952,
+                "lng": 5.4824137,
+                "titel": "Horeca 4",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Horeca4.jpg",
+                "barcode": "barcode/Horeca4.jpg"
+            }, {
+                "lat": 51.4518952,
+                "lng": 5.4828137,
+                "titel": "Horeca 5",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Horeca5.jpg",
+                "barcode": "barcode/Horeca5.jpg"
+            }
+        ],
+        "Cultuur": [
+            {
+                "lat": 51.4517747,
+                "lng": 5.4820176,
+                "titel": "Cultuur 1",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Cultuur1.jpg",
+                "barcode": "barcode/Cultuur1.jpg"
+            }, {
+                "lat": 51.4515956,
+                "lng": 5.4836137,
+                "titel": "Cultuur 2",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Cultuur2.jpg",
+                "barcode": "barcode/Cultuur2.jpg"
+            }, {
+                "lat": 51.4510952,
+                "lng": 5.4820137,
+                "titel": "Cultuur 3",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Cultuur3.jpg",
+                "barcode": "barcode/Cultuur3.jpg"
+            }, {
+                "lat": 51.4513952,
+                "lng": 5.4824137,
+                "titel": "Cultuur 4",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Cultuur4.jpg",
+                "barcode": "barcode/Cultuur4.jpg"
+            }, {
+                "lat": 51.4518952,
+                "lng": 5.4828137,
+                "titel": "Cultuur 5",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Cultuur5.jpg",
+                "barcode": "barcode/Cultuur5.jpg"
+            }
+        ],
+        "Entertainment": [
+            {
+                "lat": 51.4517747,
+                "lng": 5.4820176,
+                "titel": "Entertainment 1",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Entertainment1.jpg",
+                "barcode": "barcode/Entertainment1.jpg"
+            }, {
+                "lat": 51.4515956,
+                "lng": 5.4836137,
+                "titel": "Entertainment 2",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Entertainment2.jpg",
+                "barcode": "barcode/Entertainment2.jpg"
+            }, {
+                "lat": 51.4510952,
+                "lng": 5.4820137,
+                "titel": "Entertainment 3",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Entertainment3.jpg",
+                "barcode": "barcode/Entertainment3.jpg"
+            }, {
+                "lat": 51.4513952,
+                "lng": 5.4824137,
+                "titel": "Entertainment 4",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/Entertainment4.jpg",
+                "barcode": "barcode/Entertainment4.jpg"
+            }, {
+                "lat": 51.4518952,
+                "lng": 5.4828137,
+                "titel": "Entertainment 5",
+                "beschrijving": "Helloh",
+                "img": "images/Entertainment5.jpg",
+                "barcode": "barcode/Entertainment5.jpg"
+            }
+        ],
+        "Shoppen": [
+            {
+                "lat": 51.4517747,
+                "lng": 5.4820176,
+                "titel": "Shoppen 1",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 41",
+                "img": "images/shoppen1.png",
+                "barcode": "barcode/shoppen1.png"
+            }, {
+                "lat": 51.4515956,
+                "lng": 5.4836137,
+                "titel": "Shoppen 2",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 42",
+                "img": "images/shoppen2.png",
+                "barcode": "barcode/shoppen2.png"
+            }, {
+                "lat": 51.4510952,
+                "lng": 5.4820137,
+                "titel": "Shoppen 3",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 43",
+                "img": "images/shoppen3.png",
+                "barcode": "barcode/shoppen3.png"
+            }, {
+                "lat": 51.4442854,
+                "lng": 5.47905478,
+                "titel": "Shoppen 4",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 44",
+                "img": "images/shoppen4.png",
+                "barcode": "barcode/shoppen4.png"
+            }, {
+                "lat": 51.4442349,
+                "lng": 5.4792198,
+                "titel": "Shoppen 5",
+                "beschrijving": "Helloh",
+                "adres": "&nbsp;- nieuwstraat 45",
+                "img": "images/shoppen5.png",
+                "barcode": "barcode/shoppen5.png"
+            }
+        ],
+        "Weetjes": [
+            {
+                "lat": 51.4517747,
+                "lng": 5.4820176,
+                "titel": "Weetje 1",
+                "beschrijving": "Helloh",
+                "img": "images/Weetje1.jpg"
+            }, {
+                "lat": 51.4215956,
+                "lng": 5.4836137,
+                "titel": "Weetje 2",
+                "beschrijving": "Helloh",
+                "img": "images/Weetje2.jpg"
+            }, {
+                "lat": 51.4210952,
+                "lng": 5.4820137,
+                "titel": "Weetje 3",
+                "beschrijving": "Helloh",
+                "img": "images/Weetje3.jpg"
+            }, {
+                "lat": 51.4442854,
+                "lng": 5.47905478,
+                "titel": "Weetje 4",
+                "beschrijving": "Helloh",
+                "img": "images/Weetje4.jpg"
+            }, {
+                "lat": 51.4442349,
+                "lng": 5.4792198,
+                "titel": "Weetje 5",
+                "beschrijving": "Helloh",
+                "img": "images/Weetje5.jpg"
+            }
+        ]
     }
 }

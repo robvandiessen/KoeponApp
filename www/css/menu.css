@@ -9,6 +9,7 @@
     width: 100%;
     box-shadow: none;
     /*background-color: rgba(0,0,0,0.0);*/
+    top: -48px;
 }
 
 div#contentarea {
@@ -115,6 +116,7 @@ input[type="checkbox"]#togglebox:checked ~ nav#offcanvas-menu {
 
 #overlay_sidemenu
 {
+    z-index: 999;
     height: 100%;
     width: 100%;
     position: relative;

@@ -195,7 +195,7 @@ function checkCity(lat, lng) {
     if (lat.toFixed(3) >= 51.000&& lat.toFixed(3) <= 52.000) {
         if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 6.000) {
             inCity=true;
-            $('#koeponlijst').empty();
+            $('#content_overzicht').empty();
             getWeetjes();
             getKoepons();
         } else {
@@ -214,8 +214,22 @@ function getKoepons() {
         var lngtemp = pendels.Pendels.Shoppen[i].lng;
         if (!shoppenUsed[i] && lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
             if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
-                $('#koeponlijst').append('<li><a href="#!detail/Shoppen' + i.toString() + '">' +
-                        pendels.Pendels.Shoppen[i].titel + '</a></li>');
+                
+                $('#content_overzicht').append(
+                    '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Shoppen'
+                    + i.toString() + '">'
+                    + '<img src='+pendels.Pendels.Shoppen[i].img+' class="listimg_overzicht">'
+                    + '<div class="text_overzicht">'
+                    + '<p class="subscr_overzicht grey-text text-darken-4">'+
+                    pendels.Pendels.Shoppen[i].titel +'</p>'
+                    + '<p class="cat_overzicht grey-text text-darken-1">Shoppen</p>'
+                    + '<p class="adress_overzicht grey-text text-lighten-1">'+
+                    pendels.Pendels.Shoppen[i].adres+'</p>'
+                    + '</div></a><div style="clear:both"></div>'
+                );
+                
+                //$('#koeponlijst').append('<li><a href="#!detail/Shoppen' + i.toString() + '">' +
+                //        pendels.Pendels.Shoppen[i].titel + '</a></li>');
             }
         }
     }
@@ -227,11 +241,22 @@ function getWeetjes() {
         var lngtemp = pendels.Pendels.Weetjes[i].lng;
         if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
             if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
-                $('#koeponlijst').append('<li><a class="weetje" href="#!detail/Weetjes' + i.toString() + '">' +
-                        pendels.Pendels.Weetjes[i].titel + '</a></li>');
+                
+                $('#content_overzicht').append(
+                    '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Weetjes'
+                    + i.toString() + '">'
+                    + '<img src='+pendels.Pendels.Weetjes[i].img+' class="listimg_overzicht">'
+                    + '<div class="text_overzicht">'
+                    + '<p class="subscr_overzicht grey-text text-darken-4">'+
+                    pendels.Pendels.Weetjes[i].titel +'</p>'
+                    + '<p class="cat_overzicht grey-text text-darken-1">Weetjes</p>'
+                    + '</div></a><div style="clear:both"></div>'
+                );
+                
+                //$('#koeponlijst').append('<li><a class="weetje" href="#!detail/Weetjes' + i.toString() + '">' +
+                //        pendels.Pendels.Weetjes[i].titel + '</a></li>');
                 notification(WeetjeSeen[i]);
                 WeetjeSeen[i] = true;
-                //alert(WeetjeSeen + " " + i + "\n" + WeetjeSeen[i]);
             }
         }
     }
