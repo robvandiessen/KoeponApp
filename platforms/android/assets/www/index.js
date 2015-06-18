@@ -164,9 +164,7 @@ var lng;
 var inCity;
 var updateTime = 1000;
 
-var koepons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var koeponsAvailable = 0;
-var int = 0;
 
 var WeetjeSeen = [false, false, false, false, false];
 var horecaUsed = [false, false, false, false, false];
@@ -193,8 +191,8 @@ function filterEvent(filter){
     else if (filter === 'cultuur') {
         showCultuur = !showCultuur;
     }
-    //quick gps response by using old location
-    ageGPS = 7500;
+    //quick gps response by using previous location
+    ageGPS = 10000;
     locationGPS();
     ageGPS = 3000;
 }
@@ -212,7 +210,8 @@ window.setInterval(function() {
         window.plugins.toast.showShortBottom('Update');
     }
     var temp = koeponsAvailable;
-    koeponsAvailable = $("#koeponlijst li").length;
+    //koeponsAvailable = document.getElementsByClassName('pendelLijst').childElementCount;
+    koeponsAvailable = $('.pendelLijst').find('a').length;
     //prevent update when unnecessary
     if (temp !== koeponsAvailable) {
         cordova.plugins.backgroundMode.configure({
