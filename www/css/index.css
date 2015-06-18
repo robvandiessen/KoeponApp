@@ -132,7 +132,12 @@ body {
 }
 
 #banner_overzicht img{
+    height: 263px;
     width: 100%;
+    background-position: center center;
+}
+#logo_detail img {
+    height: auto;
 }
 
 #content_overzicht{
@@ -159,10 +164,6 @@ body {
     width: 40px;
     float: left;
     border-radius: 20px;
-}
-
-.text_overzicht{
-    float: left;
 }
 
 p.subscr_overzicht{

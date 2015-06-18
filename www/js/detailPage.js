@@ -1,38 +1,60 @@
-var index = val.substr(val.length - 1);
-var cat = val.substring(0, val.length - 1);
+var index;
+var cat;
 
 function getDetails(val) {
-    var titel = document.getElementById('pendelTitel');
-    var beschrijving = document.getElementById('beschrijving');
+    index = val.substr(val.length - 1);
+    cat = val.substring(0, val.length - 1);
+
+    var titel = $('#detail_page #banner_overzicht .kop_detail');
+    var beschrijving = $('#detail_page .subscr_detail');
+    var img = $('#detail_page #banner_overzicht img');
+    var logo = $('#detail_page #logo_detail img');
+    var barcode = $('#detail_page #pendelBar');
+    var adress = $('#detail_page .adress_overzicht');
+    
+    var category = $('#detail_page .subscr_overzicht');
+    category.html(cat);
 
     if (cat === 'Horeca') {
-        titel.innerHTML = pendels.Pendels.Horeca[index].titel;
-        beschrijving.innerHTML = pendels.Pendels.Horeca[index].beschrijving;
-        $('#pendelImg').attr('src', pendels.Pendels.Horeca[index].img);
-        $('#pendelBar').attr('src', pendels.Pendels.Horeca[index].barcode);
+        titel.html(pendels.Pendels.Horeca[index].titel);
+        beschrijving.html(pendels.Pendels.Horeca[index].beschrijving);
+        img.attr('src', pendels.Pendels.Horeca[index].img);
+        logo.attr('src', pendels.Pendels.Horeca[index].logo);
+        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Cultuur') {
-        titel.innerHTML = pendels.Pendels.Cultuur[index].titel;
-        beschrijving.innerHTML = pendels.Pendels.Cultuur[index].beschrijving;
-        $('#pendelImg').attr('src', pendels.Pendels.Cultuur[index].img);
-        $('#pendelBar').attr('src', pendels.Pendels.Cultuur[index].barcode);
+        titel.html(pendels.Pendels.Cultuur[index].titel);
+        beschrijving.html(pendels.Pendels.Cultuur[index].beschrijving);
+        img.attr('src', pendels.Pendels.Cultuur[index].img);
+        logo.attr('src', pendels.Pendels.Cultuur[index].barcode);
+        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Entertainment') {
-        titel.innerHTML = pendels.Pendels.Entertainment[index].titel;
-        beschrijving.innerHTML = pendels.Pendels.Entertainment[index].beschrijving;
-        $('#pendelImg').attr('src', pendels.Pendels.Entertainment[index].img);
-        $('#pendelBar').attr('src', pendels.Pendels.Entertainment[index].barcode);
+        titel.html(pendels.Pendels.Entertainment[index].titel);
+        beschrijving.html(pendels.Pendels.Entertainment[index].beschrijving);
+        img.attr('src', pendels.Pendels.Entertainment[index].img);
+        logo.attr('src', pendels.Pendels.Entertainment[index].barcode);
+        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Shoppen') {
-        titel.innerHTML = pendels.Pendels.Shoppen[index].titel;
-        beschrijving.innerHTML = pendels.Pendels.Shoppen[index].beschrijving;
-        $('#pendelImg').attr('src', pendels.Pendels.Shoppen[index].img);
-        $('#pendelBar').attr('src', pendels.Pendels.Shoppen[index].barcode);
+        titel.html(pendels.Pendels.Shoppen[index].titel);
+        beschrijving.html(pendels.Pendels.Shoppen[index].beschrijving);
+        img.attr('src', pendels.Pendels.Shoppen[index].img);
+        logo.attr('src', pendels.Pendels.Shoppen[index].logo);
+        //barcode.attr('src', pendels.Pendels.Shoppen[index].barcode);
+        adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Weetjes') {
-        titel.innerHTML = pendels.Pendels.Weetjes[index].titel;
-        beschrijving.innerHTML = pendels.Pendels.Weetjes[index].beschrijving;
-        $('#pendelImg').attr('src', pendels.Pendels.Weetjes[index].img);
+        titel.html(pendels.Pendels.Weetjes[index].titel);
+        beschrijving.html(pendels.Pendels.Weetjes[index].beschrijving);
+        img.attr('src', pendels.Pendels.Weetjes[index].img);
+        logo.attr('src', pendels.Pendels.Weetjes[index].barcode);
+        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        adress.html(pendels.Pendels.Horeca[index].adres);
+        
     }
 }
 

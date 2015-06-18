@@ -24,46 +24,16 @@
         <h4 class="kop_overzicht">Overzicht</h4>
     </div>
     <div id="content_overzicht">
-        <!--
-        <a class="a_overzicht grey-text.text-darken-4" id="test1" onclick="Phonon.Navigator().changePage('detail')"> 
-            <img src="img/list_koffie.png" class="listimg_overzicht">
-            <div class="text_overzicht">
-                <p class="subscr_overzicht grey-text text-darken-4">Gratis ijsje</p>
-                <p class="cat_overzicht grey-text text-darken-1">horeca</p><p class="adress_overzicht grey-text text-lighten-1">&nbsp;- nieuwstraat 43</p>
-            </div>
-
-        </a>
-        <div style="clear:both"></div>
-
-        <a class="a_overzicht grey-text.text-darken-4" id="test1" onclick="Phonon.Navigator().changePage('detail')"> 
-            <img src="img/list_koffie.png" class="listimg_overzicht">
-            <div class="text_overzicht">
-                <p class="subscr_overzicht grey-text text-darken-4">Gratis ijsje</p>
-                <p class="cat_overzicht grey-text text-darken-1">horeca</p><p class="adress_overzicht grey-text text-lighten-1">&nbsp;- nieuwstraat 43</p>
-            </div>
-        </a>
-        <div style="clear:both"></div>	
-
-        <a class="a_overzicht grey-text.text-darken-4" id="test1" onclick="Phonon.Navigator().changePage('detail')"> 
-            <img src="img/list_koffie.png" class="listimg_overzicht">
-            <div class="text_overzicht">
-                <p class="subscr_overzicht grey-text text-darken-4">Gratis ijsje</p>
-                <p class="cat_overzicht grey-text text-darken-1">horeca</p><p class="adress_overzicht grey-text text-lighten-1">&nbsp;- nieuwstraat 43</p>
-            </div>
-        </a>
-        <div style="clear:both"></div>
--->
     </div>
-    <!--<button class="filter_btn btn-floating btn-large waves-effect waves-light orange" id="test1" onclick="showGPS()">Test</button>-->
     <div class="fixed-action-btn" id="test1" style="bottom: 16px; right: 16px;">
         <a class="btn-floating btn-large deep-orange">
             <i class="large mdi-editor-mode-edit"></i>
         </a>
         <ul>
-            <li><a class="btn-floating white"><i class="large white mdi-hardware-keyboard-alt icon_filter"></i></a></li>
-            <li><a class="btn-floating white"><i class="large white mdi-maps-restaurant-menu icon_filter"></i></a></li>
-            <li><a class="btn-floating white"><i class="large white mdi-maps-local-mall icon_filter"></i></a></li>
-            <li><a class="btn-floating white"><i class="large white mdi-action-account-balance icon_filter"></i></a></li>
+            <li onclick="filterEvent('entertainment')"><a class="btn-floating white"><i class="large white mdi-hardware-keyboard-alt icon_filter"></i></a></li>
+            <li onclick="filterEvent('horeca')"><a class="btn-floating white"><i class="large white mdi-maps-restaurant-menu icon_filter"></i></a></li>
+            <li onclick="filterEvent('shoppen')"><a class="btn-floating white"><i class="large white mdi-maps-local-mall icon_filter"></i></a></li>
+            <li onclick="filterEvent('cultuur')"><a class="btn-floating white"><i class="large white mdi-action-account-balance icon_filter"></i></a></li>
         </ul>
     </div>
     <div>
@@ -71,14 +41,3 @@
         </ul>
     </div>
 </div>
-
-<!-- OLD
-<div class="content">
-    <h3>PendelApp Overzicht</h3>
-    <button class="btn waves-effect waves-light" id="test1" onclick="Phonon.Navigator().changePage('detail')">Test</button>
-    <button class="btn waves-effect waves-light" id="test1" onclick="showGPS()">GPS</button>
-    <div>
-        <ul id="koeponlijst" class="list"></ul>
-    </div>
-</div>
--->

@@ -1,5 +1,5 @@
 var pendels;
-$.getJSON('Pendels.json').done(function(json){
+$.getJSON('Pendels.json').done(function(json) {
     pendels = json;
 });
 
@@ -38,13 +38,13 @@ $(function() {
 });
 
 // Enable & setup backgroundmode
-document.addEventListener('deviceready', function () {
+document.addEventListener('deviceready', function() {
     cordova.plugins.backgroundMode.enable();
     cordova.plugins.backgroundMode.setDefaults({
-        title:  'Pendel',
+        title: 'Pendel',
         text: 'Je hebt geen voordelen beschikbaar'
     });
-    
+
     //listen for android back btn
     document.addEventListener("backbutton", onBackClickEvent, false);
     //start the navigation
@@ -67,67 +67,93 @@ Phonon.Navigator({
 Phonon.Navigator().on({page: 'uitleg1', template: 'uitleg1', asynchronous: false}, function(activity) {
     //Here you can call functions on page load, quit etc
     activity.onCreate(function(self, el, req) {
-        inCity=false;
+        inCity = false;
     });
-    activity.onReady(function(self, el, req) {});
-    activity.onTransitionEnd(function() {});
-    activity.onQuit(function(self) {});
-    activity.onHidden(function(el) {});
+    activity.onReady(function(self, el, req) {
+    });
+    activity.onTransitionEnd(function() {
+    });
+    activity.onQuit(function(self) {
+    });
+    activity.onHidden(function(el) {
+    });
 });
 
 //uitleg 2
 Phonon.Navigator().on({page: 'uitleg2', template: 'uitleg2', asynchronous: false}, function(activity) {
-    activity.onCreate(function(self, el, req) {});
-    activity.onReady(function(self, el, req) {});
-    activity.onTransitionEnd(function() {});
-    activity.onQuit(function(self) {});
-    activity.onHidden(function(el) {});
+    activity.onCreate(function(self, el, req) {
+    });
+    activity.onReady(function(self, el, req) {
+    });
+    activity.onTransitionEnd(function() {
+    });
+    activity.onQuit(function(self) {
+    });
+    activity.onHidden(function(el) {
+    });
 });
 
 //Welkom
 Phonon.Navigator().on({page: 'welkom', template: 'welkom', asynchronous: false}, function(activity) {
-    activity.onCreate(function(self, el, req) {});
+    activity.onCreate(function(self, el, req) {
+    });
     activity.onReady(function(self, el, req) {
-        inCity=false;
+        inCity = false;
         locationGPS();
     });
-    activity.onTransitionEnd(function() {});
-    activity.onQuit(function(self) {});
-    activity.onHidden(function(el) {});
+    activity.onTransitionEnd(function() {
+    });
+    activity.onQuit(function(self) {
+    });
+    activity.onHidden(function(el) {
+    });
 });
 
 //Overzicht
 Phonon.Navigator().on({page: 'overzicht', template: 'overzicht', asynchronous: false}, function(activity) {
-    activity.onCreate(function(self, el, req) {});
+    activity.onCreate(function(self, el, req) {
+    });
     activity.onReady(function(self, el, req) {
         locationGPS();
     });
-    activity.onTransitionEnd(function() {});
-    activity.onQuit(function(self) {});
-    activity.onHidden(function(el) {});
+    activity.onTransitionEnd(function() {
+    });
+    activity.onQuit(function(self) {
+    });
+    activity.onHidden(function(el) {
+    });
 });
 
 //Detail
 Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false}, function(activity) {
-    activity.onCreate(function(self, el, req) {});
+    activity.onCreate(function(self, el, req) {
+    });
     activity.onReady(function(self, el, req) {
         var paramVal = req.myParam;
-        getDetails(paramVal);
+        getDetails(req.myParam);
     });
-    activity.onTransitionEnd(function() {});
-    activity.onQuit(function(self) {});
-    activity.onHidden(function(el) {});
-},'detail/:myParam');
+    activity.onTransitionEnd(function() {
+    });
+    activity.onQuit(function(self) {
+        useKoepon();
+    });
+    activity.onHidden(function(el) {
+    });
+}, 'detail/:myParam');
 
 //Plattegrond
 Phonon.Navigator().on({page: 'plattegrond', template: 'plattegrond', asynchronous: false}, function(activity) {
-    activity.onCreate(function(self, el, req) {});
-    activity.onReady(function(self, el, req) {
-        document.getElementById('maps').src = "https://www.google.com/maps/embed/v1/search?key=AIzaSyCivTdNSJC1KC7fbPhaB3p08zdY5QHsAqU&center="+lat+","+lng+"&zoom=18&q=winkels+in+Gemert";
+    activity.onCreate(function(self, el, req) {
     });
-    activity.onTransitionEnd(function() {});
-    activity.onQuit(function(self) {});
-    activity.onHidden(function(el) {});
+    activity.onReady(function(self, el, req) {
+        document.getElementById('maps').src = "https://www.google.com/maps/embed/v1/search?key=AIzaSyCivTdNSJC1KC7fbPhaB3p08zdY5QHsAqU&center=" + lat + "," + lng + "&zoom=18&q=winkels+in+Gemert";
+    });
+    activity.onTransitionEnd(function() {
+    });
+    activity.onQuit(function(self) {
+    });
+    activity.onHidden(function(el) {
+    });
 });
 
 
@@ -137,28 +163,51 @@ var lat;
 var lng;
 var inCity;
 var updateTime = 1000;
-var category='Shoppen';
-var allCategories;
 
-var koepons = [1,2,3,4,5,6,7,8,9,0];
+var koepons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var koeponsAvailable = 0;
 var int = 0;
 
-var WeetjeSeen = [false,false,false,false,false];
-var horecaUsed = [false,false,false,false,false];
-var cultuurUsed = [false,false,false,false,false];
-var entertainmentUsed = [false,false,false,false,false];
-var shoppenUsed = [false,false,false,false,false];
+var WeetjeSeen = [false, false, false, false, false];
+var horecaUsed = [false, false, false, false, false];
+var cultuurUsed = [false, false, false, false, false];
+var entertainmentUsed = [false, false, false, false, false];
+var shoppenUsed = [false, false, false, false, false];
+var showHoreca = true;
+var showCultuur = true;
+var showEntertainment = true;
+var showShoppen = true;
+var ageGPS = 3000;
+
+//sorting stuff
+function filterEvent(filter){
+    if (filter === 'entertainment') {
+        showEntertainment = !showEntertainment;
+    }
+    else if (filter === 'horeca') {
+        showHoreca = !showHoreca;
+    }
+    else if (filter === 'shoppen') {
+        showShoppen = !showShoppen;
+    }
+    else if (filter === 'cultuur') {
+        showCultuur = !showCultuur;
+    }
+    //quick gps response by using old location
+    ageGPS = 7500;
+    locationGPS();
+    ageGPS = 3000;
+}
 
 //update timers
-window.setInterval(function(){
-    if(!inCity) {
+window.setInterval(function() {
+    if (!inCity) {
         locationGPS();
     }
 }, 300000);
 
-window.setInterval(function(){
-    if(inCity){
+window.setInterval(function() {
+    if (inCity) {
         locationGPS();
         window.plugins.toast.showShortBottom('Update');
     }
@@ -176,60 +225,134 @@ function locationGPS() {
     var onSuccess = function(position) {
         lat = position.coords.latitude;
         lng = position.coords.longitude;
-        checkCity(lat,lng);
+        checkCity(lat, lng);
     };
 
     function onError(error) {
         navigator.notification.confirm(
-            'Je telefoon kon de locatie niet vastleggen, probeer het nogmaals', // message
-            notifyOK,         // callback to invoke with index of button pressed
-            'GPS Fout',                                                 // title
-            ['OK']                                               // buttonLabels
-        );
+                'Je telefoon kon de locatie niet vastleggen, probeer het nogmaals', // message
+                notifyOK, // callback to invoke with index of button pressed
+                'GPS Fout', // title
+                ['OK']                                               // buttonLabels
+                );
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, { maximumAge: ageGPS, timeout: 5000, enableHighAccuracy: true });
 }
 
 //function to check if you are in the city
 function checkCity(lat, lng) {
-    if (lat.toFixed(3) >= 51.000&& lat.toFixed(3) <= 52.000) {
+    if (lat.toFixed(3) >= 51.000 && lat.toFixed(3) <= 52.000) {
         if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 6.000) {
-            inCity=true;
+            inCity = true;
             $('#content_overzicht').empty();
             getWeetjes();
             getKoepons();
         } else {
-            if(inCity){ notInCity(1);} 
-            else {notInCity(0);}
+            if (inCity) {
+                notInCity(1);
+            }
+            else {
+                notInCity(0);
+            }
         }
     } else {
-        if(inCity){ notInCity(1);} 
-        else {notInCity(0);}
+        if (inCity) {
+            notInCity(1);
+        }
+        else {
+            notInCity(0);
+        }
     }
 }
 
 function getKoepons() {
     for (i = 0; i < 5; i++) {
+        //Horeca
+        var lattemp = pendels.Pendels.Horeca[i].lat;
+        var lngtemp = pendels.Pendels.Horeca[i].lng;
+        if (showHoreca && !horecaUsed[i]) {
+            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
+                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+                    $('#content_overzicht').append(
+                            '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Horeca'
+                            + i.toString() + '">'
+                            + '<img src=' + pendels.Pendels.Horeca[i].img + ' class="listimg_overzicht">'
+                            + '<div class="text_overzicht">'
+                            + '<p class="subscr_overzicht grey-text text-darken-4">' +
+                            pendels.Pendels.Horeca[i].titel + '</p>'
+                            + '<p class="cat_overzicht grey-text text-darken-1">Horeca</p>'
+                            + '<p class="adress_overzicht grey-text text-lighten-1">&nbsp;-&nbsp;' +
+                            pendels.Pendels.Horeca[i].adres + '</p>'
+                            + '</div></a><div style="clear:both"></div>'
+                            );
+                }
+            }
+        }
+
+        //Cultuur
+        var lattemp = pendels.Pendels.Cultuur[i].lat;
+        var lngtemp = pendels.Pendels.Cultuur[i].lng;
+        if (showCultuur && !cultuurUsed[i]) {
+            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
+                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+                    $('#content_overzicht').append(
+                            '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Cultuur'
+                            + i.toString() + '">'
+                            + '<img src=' + pendels.Pendels.Cultuur[i].img + ' class="listimg_overzicht">'
+                            + '<div class="text_overzicht">'
+                            + '<p class="subscr_overzicht grey-text text-darken-4">' +
+                            pendels.Pendels.Cultuur[i].titel + '</p>'
+                            + '<p class="cat_overzicht grey-text text-darken-1">Cultuur</p>'
+                            + '<p class="adress_overzicht grey-text text-lighten-1">&nbsp;-&nbsp;' +
+                            pendels.Pendels.Cultuur[i].adres + '</p>'
+                            + '</div></a><div style="clear:both"></div>'
+                            );
+                }
+            }
+        }
+
+        //Entertainment
+        var lattemp = pendels.Pendels.Entertainment[i].lat;
+        var lngtemp = pendels.Pendels.Entertainment[i].lng;
+        if (showEntertainment && !entertainmentUsed[i]) {
+            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
+                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+                    $('#content_overzicht').append(
+                            '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Entertainment'
+                            + i.toString() + '">'
+                            + '<img src=' + pendels.Pendels.Entertainment[i].img + ' class="listimg_overzicht">'
+                            + '<div class="text_overzicht">'
+                            + '<p class="subscr_overzicht grey-text text-darken-4">' +
+                            pendels.Pendels.Entertainment[i].titel + '</p>'
+                            + '<p class="cat_overzicht grey-text text-darken-1">Entertainment</p>'
+                            + '<p class="adress_overzicht grey-text text-lighten-1">&nbsp;-&nbsp;' +
+                            pendels.Pendels.Entertainment[i].adres + '</p>'
+                            + '</div></a><div style="clear:both"></div>'
+                            );
+                }
+            }
+        }
+
+        //Shoppen
         var lattemp = pendels.Pendels.Shoppen[i].lat;
         var lngtemp = pendels.Pendels.Shoppen[i].lng;
-        if (!shoppenUsed[i] && lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
-            if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
-                
-                $('#content_overzicht').append(
-                    '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Shoppen'
-                    + i.toString() + '">'
-                    + '<img src='+pendels.Pendels.Shoppen[i].img+' class="listimg_overzicht">'
-                    + '<div class="text_overzicht">'
-                    + '<p class="subscr_overzicht grey-text text-darken-4">'+
-                    pendels.Pendels.Shoppen[i].titel +'</p>'
-                    + '<p class="cat_overzicht grey-text text-darken-1">Shoppen</p>'
-                    + '<p class="adress_overzicht grey-text text-lighten-1">'+
-                    pendels.Pendels.Shoppen[i].adres+'</p>'
-                    + '</div></a><div style="clear:both"></div>'
-                );
-                
-                //$('#koeponlijst').append('<li><a href="#!detail/Shoppen' + i.toString() + '">' +
-                //        pendels.Pendels.Shoppen[i].titel + '</a></li>');
+        if (showShoppen && !shoppenUsed[i]) {
+            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
+                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+
+                    $('#content_overzicht').append(
+                            '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Shoppen'
+                            + i.toString() + '">'
+                            + '<img src=' + pendels.Pendels.Shoppen[i].img + ' class="listimg_overzicht">'
+                            + '<div class="text_overzicht">'
+                            + '<p class="subscr_overzicht grey-text text-darken-4">' +
+                            pendels.Pendels.Shoppen[i].titel + '</p>'
+                            + '<p class="cat_overzicht grey-text text-darken-1">Shoppen</p>'
+                            + '<p class="adress_overzicht grey-text text-lighten-1">&nbsp;-&nbsp;' +
+                            pendels.Pendels.Shoppen[i].adres + '</p>'
+                            + '</div></a><div style="clear:both"></div>'
+                            );
+                }
             }
         }
     }
@@ -241,18 +364,18 @@ function getWeetjes() {
         var lngtemp = pendels.Pendels.Weetjes[i].lng;
         if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
             if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
-                
+
                 $('#content_overzicht').append(
-                    '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Weetjes'
-                    + i.toString() + '">'
-                    + '<img src='+pendels.Pendels.Weetjes[i].img+' class="listimg_overzicht">'
-                    + '<div class="text_overzicht">'
-                    + '<p class="subscr_overzicht grey-text text-darken-4">'+
-                    pendels.Pendels.Weetjes[i].titel +'</p>'
-                    + '<p class="cat_overzicht grey-text text-darken-1">Weetjes</p>'
-                    + '</div></a><div style="clear:both"></div>'
-                );
-                
+                        '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Weetjes'
+                        + i.toString() + '">'
+                        + '<img src=' + pendels.Pendels.Weetjes[i].img + ' class="listimg_overzicht">'
+                        + '<div class="text_overzicht">'
+                        + '<p class="subscr_overzicht grey-text text-darken-4">' +
+                        pendels.Pendels.Weetjes[i].titel + '</p>'
+                        + '<p class="cat_overzicht grey-text text-darken-1">Weetjes</p>'
+                        + '</div></a><div style="clear:both"></div>'
+                        );
+
                 //$('#koeponlijst').append('<li><a class="weetje" href="#!detail/Weetjes' + i.toString() + '">' +
                 //        pendels.Pendels.Weetjes[i].titel + '</a></li>');
                 notification(WeetjeSeen[i]);
@@ -263,22 +386,22 @@ function getWeetjes() {
 }
 
 function notInCity(val) {
-    inCity=false;
-    if(val===0) {
+    inCity = false;
+    if (val === 0) {
         navigator.notification.confirm(
-            'Je krijgt alleen voordelen aangeboden als je in de stad bent',// message
-            notifyOK,              // callback to invoke with index of button pressed
-            'Je bent niet in Gemert',                                        // title
-            ['OK']                                                    // buttonLabels
-        );
+                'Je krijgt alleen voordelen aangeboden als je in de stad bent', // message
+                notifyOK, // callback to invoke with index of button pressed
+                'Je bent niet in Gemert', // title
+                ['OK']                                                    // buttonLabels
+                );
     }
-    if(val===1) {
+    if (val === 1) {
         navigator.notification.confirm(
-            'Tot de volgende keer!',                                  // message
-            notifyOK,         // callback to invoke with index of button pressed
-            'Leuk dat je er was',                                       // title
-            ['OK']                                               // buttonLabels
-        );
+                'Tot de volgende keer!', // message
+                notifyOK, // callback to invoke with index of button pressed
+                'Leuk dat je er was', // title
+                ['OK']                                               // buttonLabels
+                );
     }
 }
 
@@ -289,24 +412,24 @@ function notifyOK() {
 
 function notification(seen) {
     if (!seen) {
-        navigator.vibrate([200, 100, 200]);
+        //navigator.vibrate([200, 100, 200]);
         navigator.notification.beep(1);
         navigator.notification.confirm(
-            'We hebben een weetje voor je',                           // message
-            weetjeOK,         // callback to invoke with index of button pressed
-            'Gemert weetje',                                            // title
-            ['Toon','Nope']                                      // buttonLabels
-        );
+                'We hebben een weetje voor je', // message
+                weetjeOK, // callback to invoke with index of button pressed
+                'Gemert weetje', // title
+                ['Toon', 'Nope']                                      // buttonLabels
+                );
     }
 }
 
 function weetjeOK(buttonIndex) {
-    if(buttonIndex === 1){
+    if (buttonIndex === 1) {
         Phonon.Navigator().changePage('detail', 'Weetjes');
     }
 }
 
 function showGPS() {
     locationGPS();
-    alert(lat+'\n'+lng);
+    alert(lat + '\n' + lng);
 }
