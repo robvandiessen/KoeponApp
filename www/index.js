@@ -180,6 +180,7 @@ var showCultuur = true;
 var showEntertainment = true;
 var showShoppen = true;
 var ageGPS = 3000;
+var errorGPS = false;
 
 //sorting stuff
 function filterEvent(filter){
@@ -260,14 +261,17 @@ function locationGPS() {
     };
 
     function onError(error) {
-        navigator.notification.confirm(
-                'Je telefoon kon de locatie niet vastleggen, probeer het nogmaals', // message
-                notifyOK, // callback to invoke with index of button pressed
-                'GPS Fout', // title
-                ['OK']                                               // buttonLabels
-                );
+        if (!errorGPS) {
+            errorGPS = true;
+            navigator.notification.confirm(
+                    'Je telefoon kon de locatie niet vastleggen, probeer het nogmaals', // message
+                    gpsOK, // callback to invoke with index of button pressed
+                    'GPS Fout',                                         // title
+                    ['OK']                                       // buttonLabels
+                    );
+        }
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, { maximumAge: ageGPS, timeout: 5000, enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: ageGPS, timeout: 5000, enableHighAccuracy: true});
 }
 
 //function to check if you are in the city
@@ -440,6 +444,13 @@ function notInCity(val) {
 function notifyOK() {
     cordova.plugins.backgroundMode.disable();
     Phonon.Navigator().changePage('welkom');
+}
+
+function gpsOK() {
+    errorGPS = false;
+    ageGPS = 15000;
+    locationGPS();
+    ageGPS = 3000;
 }
 
 function notification(seen) {
