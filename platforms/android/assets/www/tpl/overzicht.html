@@ -6,8 +6,14 @@
         <h5 class="profile_title"> Beppy van den Broek </h5>
         <div class="collection left-align">
             <ul class="sidemenuNav">
-                <a href="#!plattegrond" class="collection-item" id="sidemenu_item"><i class="small mdi-maps-map" id="sidemenu_item_icon"></i>Plattegrond</a>
-                <a href="#!" class="collection-item" id="sidemenu_item"><i class="small mdi-action-settings" id="sidemenu_item_icon"></i>Instellingen</a>
+                <a href="#!plattegrond" class="collection-item" id="sidemenu_item">
+                    <i class="small mdi-maps-map" id="sidemenu_item_icon"></i>
+                    Plattegrond
+                </a>
+                <a href="#!" class="collection-item" id="sidemenu_item">
+                    <i class="small mdi-action-settings" id="sidemenu_item_icon"></i>
+                    Instellingen
+                </a>
             </ul>
         </div>
     </nav>
@@ -30,10 +36,26 @@
             <i class="large mdi-editor-mode-edit"></i>
         </a>
         <ul>
-            <li onclick="filterEvent('entertainment')"><a class="btn-floating white"><i class="large white mdi-hardware-keyboard-alt icon_filter"></i></a></li>
-            <li onclick="filterEvent('horeca')"><a class="btn-floating white"><i class="large white mdi-maps-restaurant-menu icon_filter"></i></a></li>
-            <li onclick="filterEvent('shoppen')"><a class="btn-floating white"><i class="large white mdi-maps-local-mall icon_filter"></i></a></li>
-            <li onclick="filterEvent('cultuur')"><a class="btn-floating white"><i class="large white mdi-action-account-balance icon_filter"></i></a></li>
+            <li onclick="filterEvent('entertainment')">
+                <a class="btn-floating white">
+                    <i class="large filterOn mdi-hardware-keyboard-alt icon_filter" id="filterEntertain"></i>
+                </a>
+            </li>
+            <li onclick="filterEvent('horeca')">
+                <a class="btn-floating white">
+                    <i class="large filterOn mdi-maps-restaurant-menu icon_filter" id="filterHoreca"></i>
+                </a>
+            </li>
+            <li onclick="filterEvent('shoppen')">
+                <a class="btn-floating white">
+                    <i class="large filterOn mdi-maps-local-mall icon_filter" id="filterShoppen"></i>
+                </a>
+            </li>
+            <li onclick="filterEvent('cultuur')">
+                <a class="btn-floating white">
+                    <i class="large filterOn mdi-action-account-balance icon_filter" id="filterCultuur"></i>
+                </a>
+            </li>
         </ul>
     </div>
     <div>

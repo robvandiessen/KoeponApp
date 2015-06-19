@@ -195,6 +195,15 @@ p.adress_overzicht{
     margin-top: 0;
 }
 
+.filterOn {
+    background-color: #0084e7;
+    color: white !important;
+}
+.filterOff {
+    color: #757575 !important;
+    background-color: white;
+}
+
 /*-------------------detail ----------------------------*/
 #logo_detail{
     width: 80px;

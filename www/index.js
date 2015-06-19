@@ -114,7 +114,10 @@ Phonon.Navigator().on({page: 'overzicht', template: 'overzicht', asynchronous: f
     activity.onCreate(function(self, el, req) {
     });
     activity.onReady(function(self, el, req) {
+        //quick gps response by using previous location
+        ageGPS = 15000;
         locationGPS();
+        ageGPS = 3000;
     });
     activity.onTransitionEnd(function() {
     });
@@ -165,6 +168,7 @@ var inCity;
 var updateTime = 1000;
 
 var koeponsAvailable = 0;
+var weetjeIndex;
 
 var WeetjeSeen = [false, false, false, false, false];
 var horecaUsed = [false, false, false, false, false];
@@ -181,18 +185,46 @@ var ageGPS = 3000;
 function filterEvent(filter){
     if (filter === 'entertainment') {
         showEntertainment = !showEntertainment;
+        if(showEntertainment){
+            $('#filterEntertain').addClass('filterOn');
+            $('#filterEntertain').removeClass('filterOff');
+        } else {
+            $('#filterEntertain').addClass('filterOff');
+            $('#filterEntertain').removeClass('filterOn');
+        }
     }
     else if (filter === 'horeca') {
         showHoreca = !showHoreca;
+        if(showHoreca){
+            $('#filterHoreca').addClass('filterOn');
+            $('#filterHoreca').removeClass('filterOff');
+        } else {
+            $('#filterHoreca').addClass('filterOff');
+            $('#filterHoreca').removeClass('filterOn');
+        }
     }
     else if (filter === 'shoppen') {
         showShoppen = !showShoppen;
+        if(showShoppen){
+            $('#filterShoppen').addClass('filterOn');
+            $('#filterShoppen').removeClass('filterOff');
+        } else {
+            $('#filterShoppen').addClass('filterOff');
+            $('#filterShoppen').removeClass('filterOn');
+        }
     }
     else if (filter === 'cultuur') {
         showCultuur = !showCultuur;
+        if(showCultuur){
+            $('#filterCultuur').addClass('filterOn');
+            $('#filterCultuur').removeClass('filterOff');
+        } else {
+            $('#filterCultuur').addClass('filterOff');
+            $('#filterCultuur').removeClass('filterOn');
+        }
     }
     //quick gps response by using previous location
-    ageGPS = 10000;
+    ageGPS = 15000;
     locationGPS();
     ageGPS = 3000;
 }
@@ -377,6 +409,7 @@ function getWeetjes() {
 
                 //$('#koeponlijst').append('<li><a class="weetje" href="#!detail/Weetjes' + i.toString() + '">' +
                 //        pendels.Pendels.Weetjes[i].titel + '</a></li>');
+                weetjeIndex = i;
                 notification(WeetjeSeen[i]);
                 WeetjeSeen[i] = true;
             }
@@ -411,20 +444,20 @@ function notifyOK() {
 
 function notification(seen) {
     if (!seen) {
-        //navigator.vibrate([200, 100, 200]);
+        navigator.vibrate([200, 100, 200]);
         navigator.notification.beep(1);
         navigator.notification.confirm(
-                'We hebben een weetje voor je', // message
-                weetjeOK, // callback to invoke with index of button pressed
+                'We hebben een weetje voor je',                       // message
+                weetjeOK,     // callback to invoke with index of button pressed
                 'Gemert weetje', // title
-                ['Toon', 'Nope']                                      // buttonLabels
+                ['Toon', 'OK']                                   // buttonLabels
                 );
     }
 }
 
 function weetjeOK(buttonIndex) {
     if (buttonIndex === 1) {
-        Phonon.Navigator().changePage('detail', 'Weetjes');
+        Phonon.Navigator().changePage('detail', 'Weetjes'+weetjeIndex);
     }
 }
 
