@@ -9,34 +9,37 @@ function getDetails(val) {
     var beschrijving = $('#detail_page .subscr_detail');
     var img = $('#detail_page #banner_overzicht img');
     var logo = $('#detail_page #logo_detail img');
-    var barcode = $('#detail_page #pendelBar');
+    var barcode = $('#barcodeImg img');
     var adress = $('#detail_page .adress_overzicht');
     
     var category = $('#detail_page .subscr_overzicht');
     category.html(cat);
 
+    //show barcode btn
+    $('#detail .fixed-action-btn').show();
+    
     if (cat === 'Horeca') {
         titel.html(pendels.Pendels.Horeca[index].titel);
         beschrijving.html(pendels.Pendels.Horeca[index].beschrijving);
         img.attr('src', pendels.Pendels.Horeca[index].img);
         logo.attr('src', pendels.Pendels.Horeca[index].logo);
-        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
         adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Cultuur') {
         titel.html(pendels.Pendels.Cultuur[index].titel);
         beschrijving.html(pendels.Pendels.Cultuur[index].beschrijving);
         img.attr('src', pendels.Pendels.Cultuur[index].img);
-        logo.attr('src', pendels.Pendels.Cultuur[index].barcode);
-        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        logo.attr('src', pendels.Pendels.Cultuur[index].logo);
+        barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
         adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Entertainment') {
         titel.html(pendels.Pendels.Entertainment[index].titel);
         beschrijving.html(pendels.Pendels.Entertainment[index].beschrijving);
         img.attr('src', pendels.Pendels.Entertainment[index].img);
-        logo.attr('src', pendels.Pendels.Entertainment[index].barcode);
-        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        logo.attr('src', pendels.Pendels.Entertainment[index].logo);
+        barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
         adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Shoppen') {
@@ -44,21 +47,28 @@ function getDetails(val) {
         beschrijving.html(pendels.Pendels.Shoppen[index].beschrijving);
         img.attr('src', pendels.Pendels.Shoppen[index].img);
         logo.attr('src', pendels.Pendels.Shoppen[index].logo);
-        //barcode.attr('src', pendels.Pendels.Shoppen[index].barcode);
+        barcode.attr('src', pendels.Pendels.Shoppen[index].barcode);
         adress.html(pendels.Pendels.Horeca[index].adres);
     }
     else if (cat === 'Weetjes') {
         titel.html(pendels.Pendels.Weetjes[index].titel);
         beschrijving.html(pendels.Pendels.Weetjes[index].beschrijving);
         img.attr('src', pendels.Pendels.Weetjes[index].img);
-        logo.attr('src', pendels.Pendels.Weetjes[index].barcode);
-        //barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
-        adress.html(pendels.Pendels.Horeca[index].adres);
+        logo.attr('src', pendels.Pendels.Weetjes[index].logo);
+        barcode.attr('src', pendels.Pendels.Horeca[index].barcode);
+        adress.html(pendels.Pendels.Weetjes[index].adres);
         
+        //remove barcode
+        $('#detail .fixed-action-btn').hide();
     }
 }
 
-function useKoepon() {
+function showBarcode () {
+    document.getElementById('barcodePopup').style.display = 'initial';
+}
+
+function useBarcode() {
+    document.getElementById('barcodePopup').style.display = 'none';
     if (cat === 'Horeca') {
         horecaUsed[index] = true;
     }
@@ -71,4 +81,5 @@ function useKoepon() {
     else if (cat === 'Shoppen') {
         shoppenUsed[index] = true;
     }
+    Phonon.Navigator().changePage('overzicht');
 }

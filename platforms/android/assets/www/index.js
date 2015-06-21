@@ -180,6 +180,9 @@ var showCultuur = true;
 var showEntertainment = true;
 var showShoppen = true;
 var ageGPS = 3000;
+var errorGPS = false;
+
+var pendelRadius = 2;//0.00007;
 
 //sorting stuff
 function filterEvent(filter){
@@ -238,6 +241,7 @@ window.setInterval(function() {
 
 window.setInterval(function() {
     if (inCity) {
+        ageGPS = 3000;
         locationGPS();
         window.plugins.toast.showShortBottom('Update');
     }
@@ -260,20 +264,24 @@ function locationGPS() {
     };
 
     function onError(error) {
-        navigator.notification.confirm(
-                'Je telefoon kon de locatie niet vastleggen, probeer het nogmaals', // message
-                notifyOK, // callback to invoke with index of button pressed
-                'GPS Fout', // title
-                ['OK']                                               // buttonLabels
-                );
+        if (!errorGPS) {
+            errorGPS = true;
+            /*navigator.notification.confirm(
+                    'Je telefoon kon de locatie niet vastleggen, probeer het nogmaals', // message
+                    gpsOK, // callback to invoke with index of button pressed
+                    'GPS Fout',                                         // title
+                    ['OK']                                       // buttonLabels
+                    );*/
+            window.plugins.toast.showLongBottom('GPS Error');
+        }
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, { maximumAge: ageGPS, timeout: 5000, enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: ageGPS, timeout: 5000, enableHighAccuracy: false});
 }
 
 //function to check if you are in the city
 function checkCity(lat, lng) {
-    if (lat.toFixed(3) >= 51.000 && lat.toFixed(3) <= 52.000) {
-        if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 6.000) {
+    if (lat.toFixed(3) >= 50.000 && lat.toFixed(3) <= 52.000) {
+        if (lng.toFixed(3) >= 5.000 && lng.toFixed(3) <= 7.000) {
             inCity = true;
             $('#content_overzicht').empty();
             getWeetjes();
@@ -302,12 +310,12 @@ function getKoepons() {
         var lattemp = pendels.Pendels.Horeca[i].lat;
         var lngtemp = pendels.Pendels.Horeca[i].lng;
         if (showHoreca && !horecaUsed[i]) {
-            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
-                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+            if (lat >= lattemp - pendelRadius && lat <= lattemp + pendelRadius) {
+                if (lng >= lngtemp - pendelRadius && lng <= lngtemp + pendelRadius) {
                     $('#content_overzicht').append(
                             '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Horeca'
                             + i.toString() + '">'
-                            + '<img src=' + pendels.Pendels.Horeca[i].img + ' class="listimg_overzicht">'
+                            + '<img src=' + pendels.Pendels.Horeca[i].logo + ' class="listimg_overzicht">'
                             + '<div class="text_overzicht">'
                             + '<p class="subscr_overzicht grey-text text-darken-4">' +
                             pendels.Pendels.Horeca[i].titel + '</p>'
@@ -324,12 +332,12 @@ function getKoepons() {
         var lattemp = pendels.Pendels.Cultuur[i].lat;
         var lngtemp = pendels.Pendels.Cultuur[i].lng;
         if (showCultuur && !cultuurUsed[i]) {
-            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
-                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+            if (lat >= lattemp - pendelRadius && lat <= lattemp + pendelRadius) {
+                if (lng >= lngtemp - pendelRadius && lng <= lngtemp + pendelRadius) {
                     $('#content_overzicht').append(
                             '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Cultuur'
                             + i.toString() + '">'
-                            + '<img src=' + pendels.Pendels.Cultuur[i].img + ' class="listimg_overzicht">'
+                            + '<img src=' + pendels.Pendels.Cultuur[i].logo + ' class="listimg_overzicht">'
                             + '<div class="text_overzicht">'
                             + '<p class="subscr_overzicht grey-text text-darken-4">' +
                             pendels.Pendels.Cultuur[i].titel + '</p>'
@@ -346,12 +354,12 @@ function getKoepons() {
         var lattemp = pendels.Pendels.Entertainment[i].lat;
         var lngtemp = pendels.Pendels.Entertainment[i].lng;
         if (showEntertainment && !entertainmentUsed[i]) {
-            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
-                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+            if (lat >= lattemp - pendelRadius && lat <= lattemp + pendelRadius) {
+                if (lng >= lngtemp - pendelRadius && lng <= lngtemp + pendelRadius) {
                     $('#content_overzicht').append(
                             '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Entertainment'
                             + i.toString() + '">'
-                            + '<img src=' + pendels.Pendels.Entertainment[i].img + ' class="listimg_overzicht">'
+                            + '<img src=' + pendels.Pendels.Entertainment[i].logo + ' class="listimg_overzicht">'
                             + '<div class="text_overzicht">'
                             + '<p class="subscr_overzicht grey-text text-darken-4">' +
                             pendels.Pendels.Entertainment[i].titel + '</p>'
@@ -368,13 +376,13 @@ function getKoepons() {
         var lattemp = pendels.Pendels.Shoppen[i].lat;
         var lngtemp = pendels.Pendels.Shoppen[i].lng;
         if (showShoppen && !shoppenUsed[i]) {
-            if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
-                if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+            if (lat >= lattemp - pendelRadius && lat <= lattemp + pendelRadius) {
+                if (lng >= lngtemp - pendelRadius && lng <= lngtemp + pendelRadius) {
 
                     $('#content_overzicht').append(
                             '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Shoppen'
                             + i.toString() + '">'
-                            + '<img src=' + pendels.Pendels.Shoppen[i].img + ' class="listimg_overzicht">'
+                            + '<img src=' + pendels.Pendels.Shoppen[i].logo + ' class="listimg_overzicht">'
                             + '<div class="text_overzicht">'
                             + '<p class="subscr_overzicht grey-text text-darken-4">' +
                             pendels.Pendels.Shoppen[i].titel + '</p>'
@@ -393,13 +401,13 @@ function getWeetjes() {
     for (i = 0; i < 5; i++) {
         var lattemp = pendels.Pendels.Weetjes[i].lat;
         var lngtemp = pendels.Pendels.Weetjes[i].lng;
-        if (lat >= lattemp - 0.0025 && lat <= lattemp + 0.0025) {
-            if (lng >= lngtemp - 0.0025 && lng <= lngtemp + 0.0025) {
+        if (lat >= lattemp - pendelRadius && lat <= lattemp + pendelRadius) {
+            if (lng >= lngtemp - pendelRadius && lng <= lngtemp + pendelRadius) {
 
                 $('#content_overzicht').append(
                         '<a class="a_overzicht grey-text.text-darken-4" href="#!detail/Weetjes'
                         + i.toString() + '">'
-                        + '<img src=' + pendels.Pendels.Weetjes[i].img + ' class="listimg_overzicht">'
+                        + '<img src=' + pendels.Pendels.Weetjes[i].logo + ' class="listimg_overzicht">'
                         + '<div class="text_overzicht">'
                         + '<p class="subscr_overzicht grey-text text-darken-4">' +
                         pendels.Pendels.Weetjes[i].titel + '</p>'
@@ -440,6 +448,13 @@ function notInCity(val) {
 function notifyOK() {
     cordova.plugins.backgroundMode.disable();
     Phonon.Navigator().changePage('welkom');
+}
+
+function gpsOK() {
+    errorGPS = false;
+    ageGPS = 15000;
+    locationGPS();
+    ageGPS = 3000;
 }
 
 function notification(seen) {
