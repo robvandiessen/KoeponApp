@@ -9,7 +9,7 @@
                 "logo": "img/horeca1-profiel.png",
                 "adres": "Commandeur 1",
                 "img": "img/horeca1-sfeer.png",
-                "barcode": "barcode/Horeca1.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.500075,
                 "lng": 5.467251,
@@ -18,7 +18,7 @@
                 "logo": "img/horeca2-profiel.png",
                 "adres": "Kerkstraat 9",
                 "img": "img/horeca2-sfeer.png",
-                "barcode": "barcode/Horeca2.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.4510952,
                 "lng": 5.4820137,
@@ -27,7 +27,7 @@
                 "logo": "img/horeca3-profiel.png",
                 "adres": "Ridderplein 37",
                 "img": "img/horeca3-sfeer.png",
-                "barcode": "barcode/Horeca3.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.451959,
                 "lng": 5.480679,
@@ -36,15 +36,16 @@
                 "logo": "img/horeca4-profiel.png",
                 "adres": "Commandeur 7A",
                 "img": "img/horeca4-sfeer.png",
-                "barcode": "barcode/Horeca4.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
-                "lat": 0.451959,
-                "lng": 50.481320,
+                "lat": 50.9049381,
+                "lng": 6.0423156,
                 "titel": "Horeca 5",
                 "beschrijving": "Helloh",
+                "logo": "img/horeca4-profiel.png",
                 "adres": "Nieuwstraat 43",
                 "img": "img/shoppen1.png",
-                "barcode": "barcode/Horeca5.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }
         ],
         "Cultuur": [
@@ -56,7 +57,7 @@
                 "logo": "img/cultuur1-profiel.png",
                 "adres": "Ridderplein",
                 "img": "img/cultuur1-sfeer.png",
-                "barcode": "barcode/Cultuur1.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.4515956,
                 "lng": 5.4836137,
@@ -65,7 +66,7 @@
                 "logo": "img/cultuur2-profiel.png",
                 "adres": "Ridderplein",
                 "img": "img/cultuur2-sfeer.png",
-                "barcode": "barcode/Cultuur2.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.4510952,
                 "lng": 5.4820137,
@@ -74,7 +75,7 @@
                 "logo": "img/cultuur1-profiel.png",
                 "adres": "Pandelaar 10",
                 "img": "img/cultuur1-sfeer.png",
-                "barcode": "barcode/Cultuur3.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4513952,
                 "lng": 50.4824137,
@@ -82,7 +83,7 @@
                 "beschrijving": "Helloh",
                 "adres": "Nieuwstraat 43",
                 "img": "img/shoppen1.png",
-                "barcode": "barcode/Cultuur4.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4518952,
                 "lng": 50.4828137,
@@ -90,7 +91,7 @@
                 "beschrijving": "Helloh",
                 "adres": "Nieuwstraat 43",
                 "img": "img/shoppen1.png",
-                "barcode": "barcode/Cultuur5.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }
         ],
         "Entertainment": [
@@ -102,7 +103,7 @@
                 "logo": "img/entertainment2-profiel.png",
                 "adres": "Sint Annastraat 60",
                 "img": "img/entertainment2-sfeer.png",
-                "barcode": "barcode/Entertainment1.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.4515956,
                 "lng": 5.4836137,
@@ -111,7 +112,7 @@
                 "logo": "img/entertainment1-profiel.png",
                 "adres": "Sint Annastraat 60",
                 "img": "img/entertainment1-sfeer.png",
-                "barcode": "barcode/Entertainment2.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.4510952,
                 "lng": 5.4820137,
@@ -120,7 +121,7 @@
                 "logo": "img/entertainment3-profiel.png",
                 "adres": "Nieuwstraat 36",
                 "img": "img/entertainment3-sfeer.png",
-                "barcode": "barcode/Entertainment3.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4513952,
                 "lng": 50.4824137,
@@ -128,14 +129,14 @@
                 "beschrijving": "Helloh",
                 "adres": "Nieuwstraat 43",
                 "img": "img/shoppen1.png",
-                "barcode": "barcode/Entertainment4.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4518952,
                 "lng": 50.4828137,
                 "titel": "Entertainment 5",
                 "beschrijving": "Helloh",
                 "img": "img/shoppen1.png",
-                "barcode": "barcode/Entertainment5.jpg"
+                "barcode": "barcode/shoppen1.jpg"
             }
         ],
         "Shoppen": [
@@ -156,7 +157,7 @@
                 "logo": "img/verleiding-logo.png",
                 "adres": "Nieuwstraat 9",
                 "img": "img/shoppen2.png",
-                "barcode": "barcode/shoppen2.png"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4510952,
                 "lng": 50.4820137,
@@ -165,7 +166,7 @@
                 "logo": "img/verleiding-logo.png",
                 "adres": "Nieuwstraat 43",
                 "img": "img/shoppen3.png",
-                "barcode": "barcode/shoppen3.png"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4442854,
                 "lng": 50.47905478,
@@ -174,7 +175,7 @@
                 "logo": "img/verleiding-logo.png",
                 "adres": "Nieuwstraat 44",
                 "img": "img/shoppen4.png",
-                "barcode": "barcode/shoppen4.png"
+                "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4442349,
                 "lng": 50.4792198,
@@ -183,7 +184,7 @@
                 "logo": "img/verleiding-logo.png",
                 "adres": "Nieuwstraat 45",
                 "img": "img/shoppen5.png",
-                "barcode": "barcode/shoppen5.png"
+                "barcode": "barcode/shoppen1.jpg"
             }
         ],
         "Weetjes": [

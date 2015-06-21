@@ -99,7 +99,7 @@ Phonon.Navigator().on({page: 'welkom', template: 'welkom', asynchronous: false},
     });
     activity.onReady(function(self, el, req) {
         inCity = false;
-        locationGPS();
+        //locationGPS();
     });
     activity.onTransitionEnd(function() {
     });
@@ -132,7 +132,6 @@ Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false},
     activity.onCreate(function(self, el, req) {
     });
     activity.onReady(function(self, el, req) {
-        var paramVal = req.myParam;
         getDetails(req.myParam);
     });
     activity.onTransitionEnd(function() {
@@ -179,10 +178,10 @@ var showHoreca = true;
 var showCultuur = true;
 var showEntertainment = true;
 var showShoppen = true;
-var ageGPS = 3000;
+var ageGPS = 300;
 var errorGPS = false;
 
-var pendelRadius = 2;//0.00007;
+var pendelRadius = 0.0001;
 
 //sorting stuff
 function filterEvent(filter){
@@ -229,7 +228,7 @@ function filterEvent(filter){
     //quick gps response by using previous location
     ageGPS = 15000;
     locationGPS();
-    ageGPS = 3000;
+    ageGPS = 300;
 }
 
 //update timers
@@ -241,13 +240,14 @@ window.setInterval(function() {
 
 window.setInterval(function() {
     if (inCity) {
-        ageGPS = 3000;
+        ageGPS = 300;
         locationGPS();
         window.plugins.toast.showShortBottom('Update');
+        //showGPS();
     }
     var temp = koeponsAvailable;
     //koeponsAvailable = document.getElementsByClassName('pendelLijst').childElementCount;
-    koeponsAvailable = $('.pendelLijst').find('a').length;
+    koeponsAvailable = $('.a_overzicht').length;
     //prevent update when unnecessary
     if (temp !== koeponsAvailable) {
         cordova.plugins.backgroundMode.configure({
@@ -275,7 +275,7 @@ function locationGPS() {
             window.plugins.toast.showLongBottom('GPS Error');
         }
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: ageGPS, timeout: 5000, enableHighAccuracy: false});
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: ageGPS, timeout: 5000, enableHighAccuracy: true});
 }
 
 //function to check if you are in the city
@@ -454,7 +454,7 @@ function gpsOK() {
     errorGPS = false;
     ageGPS = 15000;
     locationGPS();
-    ageGPS = 3000;
+    ageGPS = 300;
 }
 
 function notification(seen) {
