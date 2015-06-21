@@ -242,7 +242,7 @@ window.setInterval(function() {
     if (inCity) {
         ageGPS = 300;
         locationGPS();
-        window.plugins.toast.showShortBottom('Update');
+        //window.plugins.toast.showShortBottom('Update');
         //showGPS();
     }
     var temp = koeponsAvailable;
