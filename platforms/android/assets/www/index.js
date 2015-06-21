@@ -133,7 +133,6 @@ Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false},
     });
     activity.onReady(function(self, el, req) {
         getDetails(req.myParam);
-        alert('detail rdy');
     });
     activity.onTransitionEnd(function() {
     });
@@ -244,7 +243,7 @@ window.setInterval(function() {
         ageGPS = 300;
         locationGPS();
         window.plugins.toast.showShortBottom('Update');
-        showGPS();
+        //showGPS();
     }
     var temp = koeponsAvailable;
     //koeponsAvailable = document.getElementsByClassName('pendelLijst').childElementCount;
