@@ -181,7 +181,7 @@ var showShoppen = true;
 var ageGPS = 300;
 var errorGPS = false;
 
-var pendelRadius = 0.0001;
+var pendelRadius = 3;//0.0001;
 
 //sorting stuff
 function filterEvent(filter){
