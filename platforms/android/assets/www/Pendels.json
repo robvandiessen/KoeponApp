@@ -35,11 +35,11 @@
                 "beschrijving": "Gratis bolletje ijs van het ambachtelijke Italiaanse ijs van de Verleiding. Het is een begrip in Gemert. Iedereen kent het en met warm weer is het er erg druk. Zeker de moeite waard om een bezoekje te brengen.",
                 "logo": "img/horeca4-profiel.png",
                 "adres": "Commandeur 7A",
-                "img": "img/horeca4-sfeer.png",
+                "img": "img/horeca-4-sfeer.png",
                 "barcode": "barcode/shoppen1.jpg"
             }, {
-                "lat": 50.9049381,
-                "lng": 6.0423156,
+                "lat": 500.9049381,
+                "lng": 600.0423156,
                 "titel": "Horeca 5",
                 "beschrijving": "Helloh",
                 "logo": "img/horeca4-profiel.png",
@@ -145,18 +145,18 @@
                 "lng": 5.467251,
                 "titel": "Korting schoenen bij Chalo",
                 "beschrijving": "Midden op het schoenenplein in Gemert, korting bij Chalo met deze bon. Bij Chalo zijn hippe, leuke schoenen te vinden voor vrouwen. Een stijlvol winkeltje met vriendelijk en behulpzaam personeel.",
-                "logo": "img/verleiding-logo.png",
+                "logo": "img/shoppen1-profiel.png",
                 "adres": "Nieuwstraat 40a",
-                "img": "img/shoppen1.png",
+                "img": "img/shoppen1-sfeer.png",
                 "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 51.4515956,
                 "lng": 5.4836137,
                 "titel": "Korting make-up bij DA",
                 "beschrijving": "Met dit bonnetje krijg je 20% korting op alle make-up. De DA is voorzien van de meest luxe make-up en deskundig personeel. Heb je vragen? Stel ze gerust! ",
-                "logo": "img/verleiding-logo.png",
+                "logo": "img/shoppen2-profiel.png",
                 "adres": "Nieuwstraat 9",
-                "img": "img/shoppen2.png",
+                "img": "img/shoppen2-sfeer.png",
                 "barcode": "barcode/shoppen1.jpg"
             }, {
                 "lat": 0.4510952,

@@ -53,7 +53,8 @@ document.addEventListener('deviceready', function() {
 
 //hardware back button eventhandler
 function onBackClickEvent() {
-    Phonon.Navigator().changePage(Phonon.Navigator().getPreviousPage());
+    var prev = Phonon.Navigator().getPreviousPage();
+    Phonon.Navigator().changePage(prev);
 }
 
 //--Navigation--//
@@ -137,7 +138,6 @@ Phonon.Navigator().on({page: 'detail', template: 'detail', asynchronous: false},
     activity.onTransitionEnd(function() {
     });
     activity.onQuit(function(self) {
-        useKoepon();
     });
     activity.onHidden(function(el) {
     });
@@ -181,7 +181,7 @@ var showShoppen = true;
 var ageGPS = 300;
 var errorGPS = false;
 
-var pendelRadius = 0.0001;
+var pendelRadius = 2;//0.0001;
 
 //sorting stuff
 function filterEvent(filter){
@@ -242,7 +242,7 @@ window.setInterval(function() {
     if (inCity) {
         ageGPS = 300;
         locationGPS();
-        window.plugins.toast.showShortBottom('Update');
+        //window.plugins.toast.showShortBottom('Update');
         //showGPS();
     }
     var temp = koeponsAvailable;
