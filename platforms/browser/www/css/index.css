@@ -14,15 +14,7 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
     text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
 }
 
 /* Landscape layout (with min-width) */
@@ -49,4 +41,277 @@ body {
     height:48px;
     width: 100%;
     padding: 8px;
+}
+
+/* PENDEL - UITLEG 1 + 2 & WELKOM*/
+
+.center_content
+{
+    margin: 0 auto;
+    width:85%;
+    text-align: center;
+}
+
+.pendel-logo-icon
+{
+    width: 35%;
+    margin: 25% 25% 5% 25%;
+}
+
+.btnVolgende
+{
+    width: 85%;
+    margin-top: 6%;
+}
+
+/* PENDEL - UITLEG 1 */
+.header_uitleg1
+{
+    display:none;
+}
+
+.content_uitleg1
+{
+
+    background-image: url(../img/PENDEL_uitleg-bg.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* PENDEL - UITLEG 1 */
+.header_uitleg2
+{
+    display:none;
+}
+
+.content_uitleg2
+{
+
+    background-image: url(../img/PENDEL_uitleg-bg.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* PENDEL - UITLEG 1 */
+.header_welkom
+{
+    display:none;
+}
+
+.content_welkom
+{
+
+    background-image: url(../img/PENDEL_uitleg-bg.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* SIDEMENU */
+.titel-menu
+{
+    float: right;
+    position: relative;
+    margin-top: -10px;
+    left: -5px;
+}
+
+/*-------------------------overzicht-------------------------------*/
+#banner_overzicht{
+    width: 100%;
+    margin-top: -48px;
+    box-shadow: 0px -20px 20px 20px rgba(0, 0, 0, 0.75);
+}
+
+#banner_overzicht img{
+    height: 263px;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+#logo_detail img {
+    height: auto;
+}
+
+#content_overzicht{
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.kop_overzicht{
+    left: 72px;
+    top: 200px;
+    position: absolute;
+}
+
+.a_overzicht{
+    width: 100% !important;
+    margin: 10px  0;
+    display: block;
+    height: auto;
+    overflow: auto;
+}
+
+.listimg_overzicht{
+    margin: auto 16px;
+    width: 40px;
+    float: left;
+    border-radius: 20px;
+}
+
+p.subscr_overzicht{
+    width: 80%;
+    overflow: hidden;
+    margin: 0;
+}
+
+p.cat_overzicht{
+    float: left;
+    margin: 0;
+}
+
+p.adress_overzicht{
+    float: left;
+    margin: 0;
+}
+
+.filter_btn{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.icon_filter{
+    color: #757575 !important;
+}
+
+#nobar {
+    margin-top: 0;
+}
+
+.btn-floating.btn-large i {
+    font-size: 2rem;
+    line-height: 58px;
+}
+
+.filterOn {
+    background-color: #0084e7;
+    color: white !important;
+}
+.filterOff {
+    color: #757575 !important;
+    background-color: white;
+}
+
+/*-------------------detail ----------------------------*/
+#logo_detail{
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    position: absolute;
+    bottom: -40px;
+    left: 16px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 0px grey;
+}
+
+#content_detail{
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.icon_detail{
+    margin-top: 10px;
+    width: auto;
+}
+
+.kop_detail{
+    left: 72px;
+    top: 130px;
+    position: absolute;
+}
+
+.location_detail{
+    width: 100% !important;
+    margin: 10px  0;
+    display: block;
+    height: auto;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+.subscr_detail{
+    margin: 0 10px 10px 16px;
+    font-weight: 200;
+}
+
+#icon_scan{
+    width: 25px;
+    margin: 15px auto;
+}
+
+#barcodePopup {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 99;
+    display: none;
+    transition: all .3s;
+}
+#barcodePopup #popup{
+    margin-top: 40%;
+    width: 92%;
+}
+#barcodeImg img {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.card .card-title {
+    color: #333;
+    font-weight: 600;
+}
+.card .row {
+    margin-bottom: 0;
+}
+.card .card-content {
+    padding-bottom: 0;
+}
+
+.card-action {
+    overflow: hidden;
+}
+.card-action button {
+    float: right;
+    padding: 12px;
+    color: #0084e7;
+    font-weight: 600;
+}
+.card-action button:focus {
+    background-color: rgba(0,0,0,0);
+}
+.card .card-action {
+    border: none;
+    padding: 0 16px 24px 16px;
+}
+
+
+#uitleg_icon ul {
+    list-style-type: none;
+}
+#uitleg_icon ul li {
+    display: inline;
+    margin: 0;
 }

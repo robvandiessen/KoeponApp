@@ -64,6 +64,39 @@ body {
     margin-top: 6%;
 }
 
+.center_content ul {
+    list-style-type: none;
+    margin-top: 40px;
+
+}
+
+.center_content ul li {
+    display: inline;
+    margin: 0;
+    margin: 0 10px 0 0;
+
+}
+
+
+.center_content ul li i {
+    border-radius: 50px;
+    font-size: 2rem;
+    border: solid #ffffff 1px;
+    display: inline;
+    padding: 17px;
+    color: #ffffff;
+
+
+
+}
+
+.center_content  p {
+    margin-top: 40px;
+
+
+
+}
+
 /* PENDEL - UITLEG 1 */
 .header_uitleg1
 {
@@ -306,3 +339,5 @@ p.adress_overzicht{
     border: none;
     padding: 0 16px 24px 16px;
 }
+
+

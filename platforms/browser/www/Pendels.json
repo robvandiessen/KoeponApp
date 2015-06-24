@@ -1,156 +1,228 @@
-{ "Pendels": {
-    "Horeca" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Horeca 1",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca1.jpg",
-            "barcode":"/barcode/Horeca1.jpg"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Horeca 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca2.jpg",
-            "barcode":"/barcode/Horeca2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Horeca 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca3.jpg",
-            "barcode":"/barcode/Horeca3.jpg"
-        },{
-            "lat":51.4513952,
-            "lng":5.4824137,
-            "titel":"Horeca 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca4.jpg",
-            "barcode":"/barcode/Horeca4.jpg"
-        },{
-            "lat":51.4518952,
-            "lng":5.4828137,
-            "titel":"Horeca 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Horeca5.jpg",
-            "barcode":"/barcode/Horeca5.jpg"
-        }
-    ],
-    "Cultuur" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Cultuur 1",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur1.jpg",
-            "barcode":"/barcode/Cultuur1.jpg"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Cultuur 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur2.jpg",
-            "barcode":"/barcode/Cultuur2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Cultuur 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur3.jpg",
-            "barcode":"/barcode/Cultuur3.jpg"
-        },{
-            "lat":51.4513952,
-            "lng":5.4824137,
-            "titel":"Cultuur 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur4.jpg",
-            "barcode":"/barcode/Cultuur4.jpg"
-        },{
-            "lat":51.4518952,
-            "lng":5.4828137,
-            "titel":"Cultuur 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Cultuur5.jpg",
-            "barcode":"/barcode/Cultuur5.jpg"
-        }
-    ],
-    "Entertainment" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Entertainment 1",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment1.jpg",
-            "barcode":"/barcode/Entertainment1.jpg"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Entertainment 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment2.jpg",
-            "barcode":"/barcode/Entertainment2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Entertainment 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment3.jpg",
-            "barcode":"/barcode/Entertainment3.jpg"
-        },{
-            "lat":51.4513952,
-            "lng":5.4824137,
-            "titel":"Entertainment 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment4.jpg",
-            "barcode":"/barcode/Entertainment4.jpg"
-        },{
-            "lat":51.4518952,
-            "lng":5.4828137,
-            "titel":"Entertainment 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Entertainment5.jpg",
-            "barcode":"/barcode/Entertainment5.jpg"
-        }
-    ],
-    "Shoppen" : [
-        {
-            "lat":51.4517747,
-            "lng":5.4820176,
-            "titel":"Shoppen 1",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen1.jpg",
-            "barcode":"/barcode/Shoppen1.jpg"
-        },{
-            "lat":51.4515956,
-            "lng":5.4836137,
-            "titel":"Shoppen 2",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen2.jpg",
-            "barcode":"/barcode/Shoppen2.jpg"
-        },{
-            "lat":51.4510952,
-            "lng":5.4820137,
-            "titel":"Shoppen 3",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen3.jpg",
-            "barcode":"/barcode/Shoppen3.jpg"
-        },{
-            "lat":51.4513952,
-            "lng":5.4824137,
-            "titel":"Shoppen 4",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen4.jpg",
-            "barcode":"/barcode/Shoppen4.jpg"
-        },{
-            "lat":51.4518952,
-            "lng":5.4828137,
-            "titel":"Shoppen 5",
-            "beschrijving":"Helloh",
-            "img":"/images/Shoppen5.jpg",
-            "barcode":"/barcode/Shoppen5.jpg"
-        }
-    ]
-    
+{
+    "Pendels": {
+        "Horeca": [
+            {
+                "lat": 51.500075,
+                "lng": 5.467251,
+                "titel": "Lekkere koek",
+                "beschrijving": "Als je bij 't Mikkertje een kopje koffie pakt, krijg je er een lekkere koek bij. Even genieten en bijkomen. Bij 't Mikkertje kun je ook lekker lunchen. Het is er altijd gezellig.",
+                "logo": "img/horeca1-profiel.png",
+                "adres": "Commandeur 1",
+                "img": "img/horeca1-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.500075,
+                "lng": 5.467251,
+                "titel": "Bitterballen bij Dientje",
+                "beschrijving": "Even bijkletsen? Ga gezellig bij Dientje zitten en je krijgt er een portie bitterballen bij. Dientje zit al erg lang gevestigd in Gemert. Eerst was het de Kroon. De huidige eigenaar heeft het café later vernoemd naar de vroegere eigenaresse en zijn oma Dientje. ",
+                "logo": "img/horeca2-profiel.png",
+                "adres": "Kerkstraat 9",
+                "img": "img/horeca2-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.4510952,
+                "lng": 5.4820137,
+                "titel": "Nachos bij de Heeren",
+                "beschrijving": "Op het mooie terras bij de Heeren van Gemert krijg je nu bij een lekker drankje een gratis portie nachos. Iedereen eet ze overigens daar, omdat ze simpelweg overheerlijk zijn. Geniet lekker op deze mooie centrale plek waar het vol zit met mensen. ",
+                "logo": "img/horeca3-profiel.png",
+                "adres": "Ridderplein 37",
+                "img": "img/horeca3-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.451959,
+                "lng": 5.480679,
+                "titel": "Ijsje bij Gimmerse Verleiding",
+                "beschrijving": "Gratis bolletje ijs van het ambachtelijke Italiaanse ijs van de Verleiding. Het is een begrip in Gemert. Iedereen kent het en met warm weer is het er erg druk. Zeker de moeite waard om een bezoekje te brengen.",
+                "logo": "img/horeca4-profiel.png",
+                "adres": "Commandeur 7A",
+                "img": "img/horeca-4-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 500.9049381,
+                "lng": 600.0423156,
+                "titel": "Horeca 5",
+                "beschrijving": "Helloh",
+                "logo": "img/horeca4-profiel.png",
+                "adres": "Nieuwstraat 43",
+                "img": "img/shoppen1.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }
+        ],
+        "Cultuur": [
+            {
+                "lat": 51.500212,
+                "lng": 5.467251,
+                "titel": "Wandelroute Gimmerse Ronde",
+                "beschrijving": "Wil je een mooie indruk krijgen van het dorp? Met deze wandelroute kom je op alle mooie plekjes en komt het echte Gimmert naar voren. Trek de wandelschoenen maar aan en gaan!",
+                "logo": "img/cultuur1-profiel.png",
+                "adres": "Ridderplein",
+                "img": "img/cultuur1-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.4515956,
+                "lng": 5.4836137,
+                "titel": "Rondleiding Kasteel",
+                "beschrijving": "Het eeuwenoude kasteel van Gemert is een bijzonder en mooi gebouw met imposante tuin. Wil je er meer over weten? Dan kun je nu een rondleiding krijgen.",
+                "logo": "img/cultuur2-profiel.png",
+                "adres": "Ridderplein",
+                "img": "img/cultuur2-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.4510952,
+                "lng": 5.4820137,
+                "titel": "Fietsroute Boerenbondsmuseum",
+                "beschrijving": "Vanaf het mooie Boerenbondsmuseum loopt er een fietsroute langs de buitenrand van Gemert. Met deze fietsroute zie je de mooie rustige omgeving en geniet je van de natuur.",
+                "logo": "img/cultuur1-profiel.png",
+                "adres": "Pandelaar 10",
+                "img": "img/cultuur1-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 0.4513952,
+                "lng": 50.4824137,
+                "titel": "Cultuur 4",
+                "beschrijving": "Helloh",
+                "adres": "Nieuwstraat 43",
+                "img": "img/shoppen1.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 0.4518952,
+                "lng": 50.4828137,
+                "titel": "Cultuur 5",
+                "beschrijving": "Helloh",
+                "adres": "Nieuwstraat 43",
+                "img": "img/shoppen1.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }
+        ],
+        "Entertainment": [
+            {
+                "lat": 51.500334,
+                "lng": 5.467251,
+                "titel": "Baletvoorstelling bij de Eendracht",
+                "beschrijving": "Ieder jaar laten onze talentvolle dansers zien wat ze in hun mars hebben. Als je nu een kaartje koopt, krijg je 20% korting. Deze show is altijd erg succesvol en vaak helemaal uitverkocht. Geniet ervan!",
+                "logo": "img/entertainment2-profiel.png",
+                "adres": "Sint Annastraat 60",
+                "img": "img/entertainment2-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.4515956,
+                "lng": 5.4836137,
+                "titel": "Tuny Tuesday bij Bunker",
+                "beschrijving": "Anders altijd 3 euro entree, maar nu gratis. Er komt een hoop talent langs in Gemert. Vanavond komt er ook weer een unieke artiest bij de Bunker.",
+                "logo": "img/entertainment1-profiel.png",
+                "adres": "Sint Annastraat 60",
+                "img": "img/entertainment1-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.4510952,
+                "lng": 5.4820137,
+                "titel": "Theateract bij jeugdtheater Carrousel",
+                "beschrijving": "Wat toevallig dat je in het centrum bent! Daar is nu jeugdtheatergroep Carrousel aan het spelen. Zij spelen gewoon op straat en het is toegankelijk voor iedereen. ",
+                "logo": "img/entertainment3-profiel.png",
+                "adres": "Nieuwstraat 36",
+                "img": "img/entertainment3-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 0.4513952,
+                "lng": 50.4824137,
+                "titel": "Entertainment 4",
+                "beschrijving": "Helloh",
+                "adres": "Nieuwstraat 43",
+                "img": "img/shoppen1.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 0.4518952,
+                "lng": 50.4828137,
+                "titel": "Entertainment 5",
+                "beschrijving": "Helloh",
+                "img": "img/shoppen1.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }
+        ],
+        "Shoppen": [
+            {
+                "lat": 51.500334,
+                "lng": 5.467251,
+                "titel": "Korting schoenen bij Chalo",
+                "beschrijving": "Midden op het schoenenplein in Gemert, korting bij Chalo met deze bon. Bij Chalo zijn hippe, leuke schoenen te vinden voor vrouwen. Een stijlvol winkeltje met vriendelijk en behulpzaam personeel.",
+                "logo": "img/shoppen1-profiel.png",
+                "adres": "Nieuwstraat 40a",
+                "img": "img/shoppen1-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 51.4515956,
+                "lng": 5.4836137,
+                "titel": "Korting make-up bij DA",
+                "beschrijving": "Met dit bonnetje krijg je 20% korting op alle make-up. De DA is voorzien van de meest luxe make-up en deskundig personeel. Heb je vragen? Stel ze gerust! ",
+                "logo": "img/shoppen2-profiel.png",
+                "adres": "Nieuwstraat 9",
+                "img": "img/shoppen2-sfeer.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 0.4510952,
+                "lng": 50.4820137,
+                "titel": "Shoppen 3",
+                "beschrijving": "Helloh",
+                "logo": "img/verleiding-logo.png",
+                "adres": "Nieuwstraat 43",
+                "img": "img/shoppen3.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 0.4442854,
+                "lng": 50.47905478,
+                "titel": "Shoppen 4",
+                "beschrijving": "Helloh",
+                "logo": "img/verleiding-logo.png",
+                "adres": "Nieuwstraat 44",
+                "img": "img/shoppen4.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }, {
+                "lat": 0.4442349,
+                "lng": 50.4792198,
+                "titel": "Shoppen 5",
+                "beschrijving": "Helloh",
+                "logo": "img/verleiding-logo.png",
+                "adres": "Nieuwstraat 45",
+                "img": "img/shoppen5.png",
+                "barcode": "barcode/shoppen1.jpg"
+            }
+        ],
+        "Weetjes": [
+            {
+                "lat": 51.4517747,
+                "lng": 5.4820176,
+                "titel": "Gangen",
+                "beschrijving": "Wist je dat hier onder de grond vroeger een groot gangenstelsel heeft gelopen? Men kon dan van het kasteel naar het volgende dorp lopen, zonder dat iemand ze in de gaten had.",
+                "logo": "img/cultuur2-profiel.png",
+                "adres": "Ridderplein",
+                "img": "img/weetje1-sfeer.png"
+            }, {
+                "lat": 51.500075,
+                "lng": 5.467251,
+                "titel": "Jongensschool",
+                "beschrijving": "Vroeger zat hier de oude jongensschool. Jongens en meisjes gingen naar aparte scholen. Dit was de plek waar vroeger de jongens naar school gingen.",
+                "logo": "img/cultuur2-profiel.png",
+                "adres": "De Stroom",
+                "img": "img/weetje2-sfeer.png"
+            }, {
+                "lat": 0.4210952,
+                "lng": 50.4820137,
+                "titel": "Weetje 3",
+                "beschrijving": "Helloh",
+                "img": "img/Weetje3.jpg"
+            }, {
+                "lat": 0.4442854,
+                "lng": 50.47905478,
+                "titel": "Weetje 4",
+                "beschrijving": "Helloh",
+                "img": "img/Weetje4.jpg"
+            }, {
+                "lat": 0.4442349,
+                "lng": 50.4792198,
+                "titel": "Weetje 5",
+                "beschrijving": "Helloh",
+                "img": "img/Weetje5.jpg"
+            }
+        ]
     }
 }
